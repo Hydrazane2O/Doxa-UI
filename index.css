@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sanchez:ital@0;1&family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap');
+
 html{
     scroll-behavior: smooth;
 }
@@ -187,14 +190,57 @@ li{
     display: inline-block;
     text-align: center
 }
-#section6{
-    height: 700px;
-    width: 100%;
-    background-color: orange;
-    display: inline-block;
-    text-align: center
+#section6{  
+    font-family:"Sanchez", sans-serif ;
+    margin: 50px;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr 2fr;
 }
-
+#section6 h1{
+    font-size: 60px;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+#section6 h1 span{
+    color: red;
+    margin-left: -0px;
+}
+#section6 p{
+    font-size: 20px;
+    width: 700px;
+    word-break:normal;
+}
+#section6 i{
+    width: 35px;
+    height: 35px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.us, .add, .mail{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+.us p, .add p, .mail p{
+    font-weight: bold;
+}
+.us h3, .add h3, .mail h3{
+    margin-bottom: -20px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #6c757d;
+}
+.que{
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+    margin-top: 40px;
+}
 footer{
     background-color: #162249;
     padding-right: 60px 8%;

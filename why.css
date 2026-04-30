@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sanchez:ital@0;1&family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap');
+
 html{
     scroll-behavior: smooth;
 }
@@ -138,7 +140,7 @@ footer{
     font-style: italic;
 }
 .why{
-    font-family: "Sofia Sans", sans-serif;
+    font-family: "Sanchez", sans-serif;
     font-size: 70px;
     font-weight: 400;
 }
@@ -274,7 +276,7 @@ main1 i::before{
 }
 .start{
     text-transform: capitalize;
-    font-family: "Sofia Sans", sans-serif;
+    font-family: "Sanchez", sans-serif;
     padding-top: 20px;
     height: 500px;
     font-size: 23px;
