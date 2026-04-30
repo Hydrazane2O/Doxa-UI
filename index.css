@@ -12,13 +12,16 @@ header{
     width: 100%;
     background-color: rgba(255, 255, 255, 0.836);
     overflow: hidden;
-    text-align: center;
+    display: flex;
+    align-items: center;
 }
 .logo{
-    height: 50px;
-    width: 50px;
+     height: 50px;
+    width: 70px;
     margin-left: 30px;
-    margin-right: 250px;
+    margin-right: 150px;
+    margin-top: 10px;
+
 }
 ul{
     margin: 0%;
@@ -37,6 +40,31 @@ li{
     text-transform: uppercase;
     font-weight: lighter;
     font-size: 12px;
+}
+.top a:hover{
+    color: red;
+}
+#menu, .ham , label i{
+    display: none !important;
+}
+.enroll{
+    background-color: red;
+    color: white;
+    border: none;
+    height: 35px;
+    width: 110px;
+    font-size: 15px;
+    border-radius: 40px;
+    margin-left: 150px;
+    margin-top: -10px;
+   
+}
+.enroll:hover{
+    cursor: pointer;
+    background-color: rgb(169, 12, 12);
+    border-color: black;
+    border-bottom: 0px;
+    border-left: 5px;
 }
 #section1{
     height: 700px;
@@ -80,25 +108,7 @@ li{
     display: inline-block;
     text-align: center
 }
-.enroll{
-    background-color: red;
-    color: white;
-    border: none;
-    height: 35px;
-    width: 110px;
-    font-size: 15px;
-    border-radius: 40px;
-    margin-left: 150px;
-    margin-top: -10px;
-   
-}
-.enroll:hover{
-    cursor: pointer;
-    background-color: rgb(169, 12, 12);
-    border-color: black;
-    border-bottom: 0px;
-    border-left: 5px;
-}
+
 footer{
     background-color: #162249;
     padding-right: 60px 8%;
@@ -186,3 +196,61 @@ footer{
 span{
     margin-left: 30px;
 }
+@media (max-width: 1024px){
+    .top{
+        top: 0;
+        width: 100%;
+        z-index: 10001;
+    }
+    .logo {
+        margin: 0 !important;
+        width: auto !important;
+        height: 40px !important;
+    }
+    .ham, label i {
+        display: block !important;
+        font-size: 30px;
+        cursor: pointer;
+        color: #e32626;
+        z-index: 1005;
+    }
+    .nav{
+        display: flex !important;
+        left:-100%;
+        position: fixed;
+        flex-direction: column;
+        align-items: center;
+        top: 0%;
+        width: 250px;
+        background-color: rgba(255, 255, 255, 0.849);
+        z-index:9999;
+        transition: 0.4s ease;
+        box-shadow: 7px 7px 0px 0px rgba(28, 28, 28, 0.492);
+        margin-top: 39px;
+    }
+    .top #menu:checked ~ .nav {
+        left: 0;
+    }
+
+    .top li {
+        width: 100%;
+        text-align: center;
+        list-style: none;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .top a {
+        display: inline-block;
+        width: 120px;
+        height: 10px;
+        color: black;
+        text-decoration: none;
+    }
+    .enroll{
+        display: inline-block;
+        width: 80%;
+        text-align: center;
+        margin-left: -0px;
+    }
+}
+   
