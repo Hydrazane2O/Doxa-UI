@@ -1,0 +1,24 @@
+{
+  "name": "doxaui",
+  "version": "1.0.0",
+  "description": "Doxa Stitches Fashion Academy Website",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hydrazane2O/Doxa-UI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hydrazane2O/Doxa-UI/issues"
+  },
+  "homepage": "https://github.com/Hydrazane2O/Doxa-UI#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
