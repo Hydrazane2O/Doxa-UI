@@ -220,11 +220,13 @@ header{
     font-family: 'inter';
     grid-column: 1;
     grid-row: 1;
-    animation: left 5s;
+    animation: left 6s infinite;
 }
 @keyframes left{
     0%{transform: translatex(0);}
     50%{transform: translatex(220px);}
+    75%{transform: translateX(0);}
+    100%{transform: translateX(0);}
 }
 .date{
     font-size: 12px;
@@ -265,11 +267,13 @@ header{
     grid-row: 2;
     position: relative;
     bottom: 60px;
-    animation: right 5s;
+    animation: right 6s infinite;
 }
 @keyframes right{
     0%{transform: translatex(0)}
     50%{transform: translatex(-180px)}
+    75%{transform: translateX(0px);}
+    100%{transform: translateX(0px);}
 }
 .nab{
      width: 250px;
@@ -283,7 +287,7 @@ header{
     grid-row: 3;
     position: relative;
     bottom:150px;
-    animation: left 5s;
+    animation: left 6s infinite;
 }
 .nab i, .grad i, .mid i, .party i{
     font-size: 40px;
@@ -307,7 +311,7 @@ header{
     grid-row: 4 / 5;
     position: relative;
     bottom: 220px;
-    animation: right 5s;
+    animation: right 6s infinite;
 }
 .party{
     width: 250px;
@@ -321,7 +325,7 @@ header{
     grid-row: 5;
     position: relative;
     bottom:250px;
-    animation: left 5s;
+    animation: left 6s infinite;
 }
 
 #section3{
