@@ -63,10 +63,8 @@ li{
 }
 .back:hover{
     cursor: pointer;
-    background-color: rgb(169, 12, 12);
-    border-color: black;
-    border-bottom: 0px;
-    border-left: 5px;
+    transform: rotate(5deg, 5deg) scale(1.5);
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.3);
 }
 footer{
     background-color: #162249;

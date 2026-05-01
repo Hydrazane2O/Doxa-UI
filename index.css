@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sanchez:ital@0;1&family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sanchez:ital@0;1&family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap');
 
 html{
     scroll-behavior: smooth;
@@ -25,12 +26,12 @@ header{
     margin-right: 150px;
 
 }
-ul{
+.top ul{
     margin: 0%;
     padding: 0%;
     list-style: none;
 }
-li{
+.top li{
     float: left;
 }
 .top{
@@ -66,10 +67,8 @@ li{
 }
 .enroll:hover{
     cursor: pointer;
-    background-color: rgb(169, 12, 12);
-    border-color: black;
-    border-bottom: 0px;
-    border-left: 5px;
+    transform: rotate(5deg, 5deg) scale(1.5);
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.3);
 }
 #home{
     height: 700px;
@@ -163,12 +162,168 @@ li{
     margin: 0;
 }
 #section2{
-    height: 700px;
+    height: 100%;
     width: 100%;
-    background-color: yellow;
-    display: inline-block;
-    text-align: center
 }
+.first{
+    width: 700px;
+    text-align: center;
+    flex-direction: column;
+    display: flex;
+    justify-self: center;
+}
+.first ul{
+    list-style:disc;
+    color: red;
+    padding-top: 5px;
+    height: 22px;
+    width: 200px;
+    background-color: rgba(234, 83, 83, 0.219);
+    border-radius: 10px;
+    position: relative;
+    line-height: 0.3;
+    align-self: center;
+}
+.first li::marker{
+    font-size: 30px;
+}
+.year{
+    font-family: 'sanchez';
+    font-size: 60px;
+    font-weight: 400;
+}
+.year span{
+    margin: 0;
+    color: red;
+}
+.time{
+    height: 1000px;
+    display: flex;
+    justify-self: center;
+    grid-column: 2;
+    grid-row: 1 / 5;
+}
+.line{
+    width: 1000px;
+    height: 1300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-self: center;
+}
+.itf{
+    width: 250px;
+    height: 150px;
+    border-radius: 20px;
+    text-align: left;
+    box-shadow: 5px 5px 5px 5px #00000035;
+    padding: 20px;
+    font-family: 'inter';
+    grid-column: 1;
+    grid-row: 1;
+    animation: left 5s;
+}
+@keyframes left{
+    0%{transform: translatex(0);}
+    50%{transform: translatex(220px);}
+}
+.date{
+    font-size: 12px;
+    text-align: center;
+    color: red;
+    padding-top: 5px;
+    height: 22px;
+    width: 70%;
+    background-color: rgba(234, 83, 83, 0.219);
+    border-radius: 20px;
+    left: 90px;
+    position: relative;
+    text-transform: capitalize;
+}
+.itf i{
+    position: relative;
+    bottom: 40px;
+    font-size: 40px;
+    padding: 0;
+}
+.itf h6{
+    font-size: 20px;
+    margin: -20px 0 5px 0;
+}
+.bot{
+    font-size: 12px;
+    margin: 0;
+}
+.mid{
+    width: 250px;
+    height: 150px;
+    border-radius: 20px;
+    text-align: left;
+    box-shadow: 5px 5px 5px 5px #00000035;
+    padding: 20px;
+    font-family: 'inter';
+    grid-column: 3;
+    grid-row: 2;
+    position: relative;
+    bottom: 60px;
+    animation: right 5s;
+}
+@keyframes right{
+    0%{transform: translatex(0)}
+    50%{transform: translatex(-180px)}
+}
+.nab{
+     width: 250px;
+    height: 150px;
+    border-radius: 20px;
+    text-align: left;
+    box-shadow: 5px 5px 5px 5px #00000035;
+    padding: 20px;
+    font-family: 'inter';
+    grid-column: 1;
+    grid-row: 3;
+    position: relative;
+    bottom:150px;
+    animation: left 5s;
+}
+.nab i, .grad i, .mid i, .party i{
+    font-size: 40px;
+    position: relative;
+    bottom: 40px;
+}
+.nab h6, .grad h6, .mid h6, .party h6{
+    margin-top: -20px;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.grad{
+    width: 250px;
+    height: 150px;
+    border-radius: 20px;
+    text-align: left;
+    box-shadow: 5px 5px 5px 5px #00000035;
+    padding: 20px;
+    font-family: 'inter';
+    grid-column: 3;
+    grid-row: 4 / 5;
+    position: relative;
+    bottom: 220px;
+    animation: right 5s;
+}
+.party{
+    width: 250px;
+    height: 150px;
+    border-radius: 20px;
+    text-align: left;
+    box-shadow: 5px 5px 5px 5px #00000035;
+    padding: 20px;
+    font-family: 'inter';
+    grid-column: 1;
+    grid-row: 5;
+    position: relative;
+    bottom:250px;
+    animation: left 5s;
+}
+
 #section3{
     height: 700px;
     width: 100%;
