@@ -83,8 +83,7 @@ header{
     justify-content: space-around;
     width: 95%;
     margin: 0 auto;
-    margin-bottom: 40px;
-}
+    margin-bottom: 40px;}
 .img{
     width: 90%;
     max-width: 800px;
@@ -147,6 +146,7 @@ header{
     padding-top: 20px;
     height: 500px;
     width: 500px;
+    margin-right: 40px;
 }
 .leg h1{
     font-size: 73px;
@@ -204,18 +204,23 @@ header{
     grid-row: 1 / 5;
 }
 .line{
-    width: 1000px;
-    height: 1300px;
+    width: 70%;
+    height: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-self: center;
+}
+.itf:hover, .mid:hover, .nab:hover, .grad:hover, .party:hover{
+    border: 1px solid red;
+    transform: rotate(5deg, 5deg) scale(1.5);
+    box-shadow:  8px 8px 12px rgba(0, 0, 0, 0.564) ;
 }
 .itf{
     width: 250px;
     height: 150px;
     border-radius: 20px;
     text-align: left;
-    box-shadow: 5px 5px 5px 5px #00000035;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.208);
     padding: 20px;
     font-family: 'inter';
     grid-column: 1;
@@ -224,11 +229,11 @@ header{
 }
 @keyframes left{
     0%{transform: translatex(0);}
-    50%{transform: translatex(220px);}
+    50%{transform: translatex(230px);}
     75%{transform: translateX(0);}
     100%{transform: translateX(0);}
 }
-.date{
+.itf .date{
     font-size: 12px;
     text-align: center;
     color: red;
@@ -275,6 +280,19 @@ header{
     75%{transform: translateX(0px);}
     100%{transform: translateX(0px);}
 }
+.mid .date{
+    font-size: 12px;
+    text-align: center;
+    color: rgb(255, 128, 0);
+    padding-top: 5px;
+    height: 22px;
+    width: 40%;
+    background-color: rgba(234, 83, 83, 0.219);
+    border-radius: 20px;
+    left: 150px;
+    position: relative;
+    text-transform: capitalize;
+}
 .nab{
      width: 250px;
     height: 150px;
@@ -286,8 +304,21 @@ header{
     grid-column: 1;
     grid-row: 3;
     position: relative;
-    bottom:150px;
-    animation: left 6s infinite;
+    bottom:100px;
+    animation: left 6s infinite ;
+}
+.nab .date{
+    font-size: 12px;
+    text-align: center;
+    color: rgb(255, 128, 0);
+    padding-top: 5px;
+    height: 22px;
+    width: 60%;
+    background-color: rgba(234, 83, 83, 0.219);
+    border-radius: 20px;
+    left: 110px;
+    position: relative;
+    text-transform: capitalize;
 }
 .nab i, .grad i, .mid i, .party i{
     font-size: 40px;
@@ -310,8 +341,21 @@ header{
     grid-column: 3;
     grid-row: 4 / 5;
     position: relative;
-    bottom: 220px;
+    bottom: 150px;
     animation: right 6s infinite;
+}
+.grad .date{
+    font-size: 12px;
+    text-align: center;
+    color: #99C36E;
+    padding-top: 5px;
+    height: 22px;
+    width: 40%;
+    background-color: rgba(83, 234, 93, 0.219);
+    border-radius: 20px;
+    left: 120px;
+    position: relative;
+    text-transform: capitalize;
 }
 .party{
     width: 250px;
@@ -324,10 +368,22 @@ header{
     grid-column: 1;
     grid-row: 5;
     position: relative;
-    bottom:250px;
+    bottom:179px;
     animation: left 6s infinite;
 }
-
+.party .date{
+    font-size: 12px;
+    text-align: center;
+    color: #209BBA;
+    padding-top: 5px;
+    height: 22px;
+    width: 40%;
+    background-color: rgba(83, 201, 234, 0.219);
+    border-radius: 20px;
+    left: 120px;
+    position: relative;
+    text-transform: capitalize;
+}
 #section3{
     height: 700px;
     width: 100%;
