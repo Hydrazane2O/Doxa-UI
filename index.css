@@ -602,3 +602,277 @@ span{
     }
 }
    
+/* ============================================================
+   Why Doxa + Join sections (merged from why.css)
+   Header, footer, navigation, .about, .quick, .contact,
+   .bottom and the mobile media-query were removed as duplicates.
+   Image / .img / .f1 / .f2 selectors are scoped to the merged
+   sections to avoid clobbering #section1 styles.
+   ============================================================ */
+
+#why {
+    padding: 40px 20px;
+    text-align: center;
+}
+.why {
+    font-family: "Sanchez", sans-serif;
+    font-size: 70px;
+    font-weight: 400;
+}
+.why span {
+    color: red;
+    font-style: italic;
+}
+.cards {
+    display: flex;
+    gap: 30px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.card {
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: 320px;
+    min-width: 180px;
+    margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    border-radius: 17px;
+    border: 3px solid red;
+    padding: 40px 20px 20px;
+    background-color: rgba(255, 255, 255, 0.518);
+    box-sizing: border-box;
+}
+.card p {
+    margin-top: -20px;
+}
+.card i {
+    width: 55px;
+    height: 55px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 30px solid rgb(237, 165, 165);
+    border-radius: 50%;
+    background-color: rgb(237, 165, 165);
+    box-sizing: border-box;
+    font-size: 20px;
+    position: relative;
+}
+.card i::before {
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.main2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.main2 h1 {
+    font-weight: 500;
+}
+.main2 h1 span {
+    color: red;
+}
+.main2 p,
+.main2 h3 {
+    margin: 0;
+}
+.join-img {
+    flex: 1;
+    min-width: 280px;
+    display: grid;
+    gap: 15px;
+}
+.join span {
+    color: red;
+    margin: 0 5px;
+}
+.join {
+    background-color: black;
+    justify-content: center;
+    display: flex;
+    padding: 50px;
+}
+.join,
+.fut {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    border-radius: 20px;
+}
+.fut {
+    background-color: rgb(255, 0, 0);
+    justify-content: center;
+    display: flex;
+    padding: 60px;
+    margin-top: -110px;
+}
+.fut span {
+    color: rgb(16, 16, 112);
+    margin-right: 5px;
+}
+.jf1,
+.jf2 {
+    height: auto;
+    border-radius: 20px;
+    width: 100%;
+    object-fit: cover;
+}
+.start {
+    flex: 1;
+    min-width: 280px;
+    text-transform: capitalize;
+    font-family: "Sanchez", sans-serif;
+    font-size: 23px;
+}
+.main2 .us,
+.main2 .add,
+.main2 .mail {
+    margin-bottom: 15px;
+}
+
+/* ============================================================
+   RESPONSIVE OVERHAUL (v2)
+   Prevents horizontal overflow on small screens and reflows
+   the fixed-pixel layouts from the original CSS.
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { max-width: 100%; overflow-x: hidden; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* Header polish for all sizes */
+.top { padding: 10px 20px; gap: 12px; flex-wrap: wrap; }
+.top .logo { margin: 0; height: 50px; width: auto; }
+.top a { padding: 18px 14px; padding-top: 22px; }
+
+/* HERO */
+#home { height: auto; min-height: 60vh; padding: 80px 20px; }
+
+/* ============ Tablet + mobile (<=1024px) ============ */
+@media (max-width: 1024px) {
+    /* OVERVIEW (section1) — single column, fluid widths */
+    #section1 {
+        display: block;
+        width: 92%;
+        margin: 0 auto 40px;
+    }
+    #section1 .img {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        max-width: 100%;
+    }
+    .net, .hand {
+        width: 100%;
+        max-width: 420px;
+        padding: 30px;
+        margin: 0;
+    }
+    .f1, .f3 {
+        width: 100%;
+        max-width: 420px;
+        height: auto;
+        margin: 0;
+        grid-row: auto;
+        grid-column: auto;
+    }
+    .leg {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        margin: 30px auto 0;
+        padding: 0 10px;
+        text-align: center;
+    }
+    .leg h1 { font-size: 44px; }
+    .leg p  { font-size: 17px; }
+
+    /* CURRICULUM (section2) — stack timeline cards, hide decorative spine */
+    .first { width: 100%; max-width: 600px; padding: 0 20px; }
+    .year  { font-size: 40px; }
+    .line {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+    }
+    .itf, .mid, .nab, .grad, .party {
+        width: 100%;
+        max-width: 320px;
+        position: static;
+        bottom: auto;
+        animation: none;
+        grid-column: auto;
+        grid-row: auto;
+    }
+    .time { display: none; }
+
+    /* Stub sections */
+    #section3, #section4, #section5 { height: 320px; }
+
+    /* WHY DOXA */
+    .why { font-size: 44px; }
+    .cards { padding: 20px 16px; gap: 20px; }
+
+    /* JOIN section */
+    .main2 { padding: 30px 16px; }
+    .join, .fut { padding: 30px; font-size: 18px; }
+    .fut { margin-top: -40px; }
+
+    /* FOOTER — let columns shrink */
+    footer {
+        padding: 30px 20px;
+        gap: 30px;
+        flex-direction: column;
+    }
+    .about, .quick, .contact {
+        flex: 1 1 100%;
+        min-width: 0;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .about p { margin-right: 0; font-size: 16px; }
+    .quick { max-width: 100%; }
+    .contact { margin-top: 0; }
+    .contact p { font-size: 14px; word-break: break-word; }
+    .bottom { padding: 16px 20px; text-align: center; }
+}
+
+/* ============ Phone (<=640px) ============ */
+@media (max-width: 640px) {
+    .top { padding: 8px 14px; }
+    .top .logo { height: 40px; }
+    #home { padding: 60px 16px; }
+    #home h1 { font-size: 32px; }
+
+    .leg h1 { font-size: 34px; }
+    .leg p  { font-size: 15px; }
+    .year   { font-size: 32px; }
+    .why    { font-size: 34px; }
+
+    .card { max-width: 100%; padding: 30px 16px 16px; }
+    .main2 h1 { font-size: 32px; }
+    .start { font-size: 18px; }
+}
