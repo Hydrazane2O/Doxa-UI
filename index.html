@@ -4,26 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <!-- Updated FontAwesome Kit Integration Font reference link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Doxa Stitches Fashion Academy</title>
 </head>
 <body>
-    <header class="top">
-        <a href="#home" class="logo-link"><img src="doxa/Logo.png" class="logo"></a>
-        <input type="checkbox" id="menu" aria-hidden="true">
-        <label for="menu" class="ham" aria-label="Open menu"><i class="fa-solid fa-bars"></i></label>
-        <label for="menu" class="nav-overlay" aria-hidden="true"></label>
-        <ul class="nav">
-            <li class="nav-close-row">
-                <label for="menu" class="nav-close" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></label>
-            </li>
-            <li><a href="#section1">OVERVIEW</a></li>
-            <li><a href="#section2">CURRICULUM</a></li>
-            <li><a href="#section3">EVENTS</a></li>
-            <li><a href="#section4">REQUIREMENTS</a></li>
-            <li><a href="#section5">FEES & FUNDINGS</a></li>
-            <li><a href="#why">WHY DOXA</a></li>
-        </ul>
+    <header>
+        <div class="top">
+            <a href="#home" class="logo-link"><img src="doxa/Logo.png" class="logo" alt="Doxa Logo"></a>
+            
+            <input type="checkbox" id="menu" aria-hidden="true">
+            <label for="menu" class="ham" aria-label="Open menu"><i class="fa-solid fa-bars"></i></label>
+            <div class="nav-overlay"></div>
+            
+            <ul class="nav">
+                <li class="nav-close-row">
+                    <label for="menu" class="nav-close" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></label>
+                </li>
+                <li><a href="#section1">OVERVIEW</a></li>
+                <li><a href="#section2">CURRICULUM</a></li>
+                <li><a href="#section3">EVENTS</a></li>
+                <li><a href="#section4">REQUIREMENTS</a></li>
+                <li><a href="#section5">FEES</a></li>
+                <li><a href="#why">WHY DOXA</a></li>
+            </ul>
+        </div>
     </header>
 
     <div id="home">
@@ -32,23 +37,34 @@
 
     <div id="section1">
         <div class="img">
-            <img src="doxa/f3.jpg" class="f3">
-            <div class="net">
-                <h4>Physical Network</h4>
-                <p>Build lifelong connections with peers and industry leaders in our collaborative space.</p>
+            <div class="overview-gallery">
+                <img src="doxa/f3.jpg" class="f3" alt="Fashion Display">
+                <div class="net">
+                    <h4>Physical Network</h4>
+                    <p>Build lifelong connections with peers and industry leaders in our collaborative space.</p>
+                </div>
+                <div class="hand">
+                    <h4>Hands-on Learning</h4>
+                    <p>Every stitch, every cut, guided by experts in real-time. No screens, just craftsmanship.</p>
+                </div>
+                <img src="doxa/f1.jpg" class="f1" alt="Craftsmanship">
             </div>
-            <div class="hand">
-                <h4>Hands-on Learning</h4>
-                <p>Every stitch, every cut, guided by experts in real-time. No screens, just craftsmanship.</p>
-            </div>
-            <img src="doxa/f1.jpg" class="f1">
+            
             <div class="leg">
                 <h1>Legacy Of <span>Excellence.</span></h1>
-                <p>Founded on the principles of traditional craftsmanship and modern innovation, Doxa Stitches Fashion Academy is a premier institution dedicated to the art of garment construction.</p><br>
+                <p>Founded on the principles of traditional craftsmanship and modern innovation, Doxa Stitches Fashion Academy is a premier institution dedicated to the art of garment construction.</p>
                 <p>We believe in the power of physical interaction. Our students learn in a high-tech studio environment, receiving hands-on mentorship from couturiers.</p>
-                <p style="font-size: 20px; margin-top: 50px; font-weight: bold;"><i class="fa-solid fa-location-dot fa-lg" style="color: red;"></i>Benin City, NG</p>
-                <p style="text-transform: uppercase; color: gray; font-size: 18px; margin:10px;">Physical studio</p>
-                <p style="font-size: 20px; font-weight: bold;"><i class="fa-solid fa-medal fa-lg" style="color: rgb(255, 0, 4);"></i> 10+ <br> <span style="color: gray; font-weight: lighter; margin: 10px;">years of excellence</span></p>
+                
+                <div class="leg-meta">
+                    <div class="meta-item">
+                        <i class="fa-solid fa-location-dot" style="color: red;"></i> Benin City, NG
+                        <span>Physical studio</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fa-solid fa-medal" style="color: rgb(255, 0, 4);"></i> 10+ Years
+                        <span>Of pure excellence</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -56,16 +72,41 @@
     <div id="section2">
         <div class="first">
             <ul><li>ACADEMIC CALENDAR</li></ul>
-            <h4 class="year">Your Year at <span>Doxa</span></h4>
+            <h2 class="year">Your Year at <span>Doxa</span></h2>
             <p>Follow the journey of transformation through our carefully structured academic year, filled with milestones, assessments, and celebrations.</p>
         </div>
-        <div class="line">
-            <div class="itf"><p class="date">september-november</p><i class="fa-solid fa-person-chalkboard" style="color: rgb(0, 0, 4);"></i><h6>ITF Training</h6><p class="bot">Intensive Industrial Training Fund certification program</p></div>
-            <div class="mid"><p class="date">may-june</p><i class="fa-solid fa-square-poll-vertical" style="color: rgb(0, 0, 4);"></i><h6>Mid-Year Assessment</h6><p class="bot">Portfolio review and skills evaluation checkpoint certification program</p></div>
-            <div class="nab"><p class="date">Flexible Schedule</p><i class="fa-regular fa-pen-to-square" style="color: rgb(0, 0, 4);"></i><h6>NABTEB Examination</h6><p class="bot">National Business and Technical Examinations Board certification</p></div>
-            <div class="grad"><p class="date">november</p><i class="fa-solid fa-graduation-cap fa-2xl" style="color: rgb(0, 0, 4);"></i><h6>Graduation Ceremony</h6><p class="bot">Celebrate your transformation into a fashion professional</p></div>
-            <div class="party"><p class="date">december</p><i class="fa-solid fa-champagne-glasses" style="color: rgb(0, 0, 4);"></i><h6>End of Year Party</h6><p class="bot">Network, celebrate, and showcase your final collections</p></div>
-            <img src="doxa/timeline.png" class="time">
+        
+        <div class="timeline-container">
+            <div class="timeline-card left">
+                <span class="date">september - november</span>
+                <i class="fa-solid fa-person-chalkboard"></i>
+                <h6>ITF Training</h6>
+                <p class="bot">Intensive Industrial Training Fund certification program</p>
+            </div>
+            <div class="timeline-card right">
+                <span class="date">may - june</span>
+                <i class="fa-solid fa-square-poll-vertical"></i>
+                <h6>Mid-Year Assessment</h6>
+                <p class="bot">Portfolio review and skills evaluation checkpoint certification program</p>
+            </div>
+            <div class="timeline-card left">
+                <span class="date">Flexible Schedule</span>
+                <i class="fa-regular fa-pen-to-square"></i>
+                <h6>NABTEB Examination</h6>
+                <p class="bot">National Business and Technical Examinations Board certification</p>
+            </div>
+            <div class="timeline-card right">
+                <span class="date">november</span>
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h6>Graduation Ceremony</h6>
+                <p class="bot">Celebrate your transformation into a fashion professional</p>
+            </div>
+            <div class="timeline-card left">
+                <span class="date">december</span>
+                <i class="fa-solid fa-champagne-glasses"></i>
+                <h6>End of Year Party</h6>
+                <p class="bot">Network, celebrate, and showcase your final collections</p>
+            </div>
         </div>
     </div>
 
@@ -73,52 +114,54 @@
     <div id="section4"><h1>REQUIREMENTS Section</h1></div>
     <div id="section5"><h1>FEES & FUNDINGS Section</h1></div>
 
-    <!-- Why Doxa (merged from why.html) -->
     <section id="why">
         <h1 class="why">Why <span>Doxa..?</span></h1>
         <div class="cards">
-            <div class="card"><i class="fa-solid fa-award fa-2xl" style="color: #c62828;"></i><h4>Certified</h4><p>CAC and NABTEB Certified</p></div>
-            <div class="card"><i class="fa-solid fa-sitemap fa-2xl" style="color: #c62828;"></i><h4>Structured Program</h4><p>Get Trained for 8 months, 24 months or 36 months</p></div>
-            <div class="card"><i class="fa-solid fa-book-open-reader fa-2xl" style="color: #c62828;"></i><h4>Various Learning Experiences</h4><p>Learn From Instructors and Former Students</p></div>
-            <div class="card"><i class="fa-solid fa-chalkboard-user fa-2xl" style="color: #c62828;"></i><h4>Grades & Classes</h4><p>Beginner, Intermediate & Advanced</p></div>
-            <div class="card"><i class="fa-solid fa-shapes fa-2xl" style="color: #c62828;"></i><h4>Hands-On Training</h4><p>Practical, assignment-based learning approach</p></div>
-            <div class="card"><i class="fa-solid fa-chart-line fa-2xl" style="color: #c62828;"></i><h4>Growth & Consistency</h4><p>We encourage growth & consistency among students through independent Research & Development (R&D)</p></div>
+            <div class="card"><i class="fa-solid fa-award"></i><h4>Certified</h4><p>CAC and NABTEB Certified</p></div>
+            <div class="card"><i class="fa-solid fa-sitemap"></i><h4>Structured Program</h4><p>Get Trained for 8 months, 24 months or 36 months</p></div>
+            <div class="card"><i class="fa-solid fa-book-open-reader"></i><h4>Learning Experiences</h4><p>Learn From Instructors and Former Students</p></div>
+            <div class="card"><i class="fa-solid fa-chalkboard-user"></i><h4>Grades & Classes</h4><p>Beginner, Intermediate & Advanced</p></div>
+            <div class="card"><i class="fa-solid fa-shapes"></i><h4>Hands-On Training</h4><p>Practical, assignment-based learning approach</p></div>
+            <div class="card"><i class="fa-solid fa-chart-line"></i><h4>Growth & Consistency</h4><p>We encourage growth & consistency through independent Research & Development (R&D)</p></div>
         </div>
     </section>
 
     <section class="main2">
         <div class="join-img">
             <h4 class="join">Join<span> Doxa </span>Today</h4>
-            <img src="doxa/f2.jpg" class="jf2">
-            <img src="doxa/f1.jpg" class="jf1">
+            <img src="doxa/f2.jpg" class="jf2" alt="Student Work">
+            <img src="doxa/f1.jpg" class="jf1" alt="Tailoring Details">
             <h4 class="fut"><span>"Stitch"</span> the Future of Fashion</h4>
         </div>
         <div class="start">
             <h1>start your <br> <span>fashion journey</span></h1>
-            <div class="us"><h3>Contact us:</h3>
-                <p><i class="fa-solid fa-phone fa-sm" style="color: rgb(255, 0, 4);"></i> +234 909 311 1400</p>
-                <p><i class="fa-solid fa-phone fa-sm" style="color: rgb(255, 0, 4);"></i> +234 803 264 6454</p>
-            </div>
-            <div class="add"><h3>Address:</h3>
-                <p><i class="fa-solid fa-location-dot fa-sm" style="color: rgb(255, 0, 4);"></i>4 Omogui Obasogie Avenue<br>Off Ekehuan Road, Benin city</p>
-            </div>
-            <div class="mail"><h3>Email:</h3>
-                <p><i class="fa-regular fa-envelope fa-sm" style="color: rgb(252, 0, 4);"></i> doxastitches83@gmail.com</p>
+            <div class="contact-info-block">
+                <div class="info-group">
+                    <h3>Contact us:</h3>
+                    <p><i class="fa-solid fa-phone" style="color: rgb(255, 0, 4);"></i> +234 909 311 1400</p>
+                    <p><i class="fa-solid fa-phone" style="color: rgb(255, 0, 4);"></i> +234 803 264 6454</p>
+                </div>
+                <div class="info-group">
+                    <h3>Address:</h3>
+                    <p><i class="fa-solid fa-location-dot" style="color: rgb(255, 0, 4);"></i> 4 Omogui Obasogie Avenue, Off Ekehuan Road, Benin city</p>
+                </div>
+                <div class="info-group">
+                    <h3>Email:</h3>
+                    <p><i class="fa-regular fa-envelope" style="color: rgb(252, 0, 4);"></i> doxastitches83@gmail.com</p>
+                </div>
             </div>
         </div>
     </section>
 
-
-
-    <main></main>
-
     <footer>
         <div class="about">
-            <img src="doxa/Logo.png" class="logo">
+            <img src="doxa/Logo.png" class="logo" alt="Logo">
             <p>Empowering the next generation of designers through world-class fashion education.</p>
-            <a href="facebook.com"><i class="fa-brands fa-facebook fa-sm" style="color: rgb(255, 255, 255);"></i></a>
-            <a href="tiktok.com"><i class="fa-brands fa-tiktok fa-sm" style="color: rgb(255, 255, 255);"></i></a>
-            <a href="instagram.com"><i class="fa-brands fa-instagram fa-sm" style="color: rgb(255, 255, 255);"></i></a>
+            <div class="social-icons">
+                <a href="https://facebook.com" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://tiktok.com" aria-label="Tiktok"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://instagram.com" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
         </div>
         <div class="quick">
             <h4>Quick Links</h4>
@@ -131,17 +174,19 @@
                 <li><a href="#why">Why Doxa</a></li>
             </ul>
         </div>
-        <div class="contact">
-            <p><i class="fa-regular fa-envelope fa-xl" style="color: rgb(116, 192, 252);"></i> doxastitches83@gmail.com</p>
-            <p><i class="fa-solid fa-phone-flip fa-xl" style="color: rgb(116, 192, 252);"></i> +234 803 264 6454</p>
-            <p><i class="fa-solid fa-phone-flip fa-xl" style="color: rgb(116, 192, 252);"></i> +234 909 311 1400</p>
-            <p><i class="fa-solid fa-location-dot fa-xl" style="color: rgb(116, 192, 252);"></i> Omogui Obasogie Avenue, <br><span>Off Ekehuan Road, Benin City</span></p>
+        <div class="footer-contact">
+            <h4>Contact Info</h4>
+            <p><i class="fa-regular fa-envelope"></i> doxastitches83@gmail.com</p>
+            <p><i class="fa-solid fa-phone-flip"></i> +234 803 264 6454</p>
+            <p><i class="fa-solid fa-phone-flip"></i> +234 909 311 1400</p>
+            <p><i class="fa-solid fa-location-dot"></i> <span>Omogui Obasogie Avenue, Off Ekehuan Road, Benin City</span></p>
         </div>
     </footer>
 
     <div class="bottom">
         <hr>
-        <p>&copy; 2026 DOXA STITCHES FASHION ACADEMY ALL RIGHTS RESERVED</p>
+        <p>&copy; 2026 DOXA STITCHES FASHION ACADEMY. ALL RIGHTS RESERVED.</p>
     </div>
 </body>
-</html>
+    </html>
+
