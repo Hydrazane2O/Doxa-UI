@@ -276,17 +276,17 @@ header.top {
     box-shadow: 0 0.52vw 1.6vw rgba(255, 0, 0, 0.08);
 }
 
-.itf, .nab, .party { left: 0; animation: slideFromLeft 6s infinite ease-out; }
-.mid, .grad { left: 56%; animation: slideFromRight 6s infinite ease-out; }
+.itf, .nab, .party { left: 14%; animation: slideFromLeft 6s infinite ease-out; }
+.mid, .grad { left: 66%; animation: slideFromRight 6s infinite ease-out; }
 
 @keyframes slideFromLeft {
-    0%{transform: translateX(-3.125vw);}
-    50% { transform: translateX(2.6042vw); }
-    100%{transform: translateX(-3.125vw);}
+    0%{transform: translateX(-3vw);}
+    50% { transform: translateX(8.6042vw); }
+    100%{transform: translateX(-3);}
 }
 @keyframes slideFromRight { 
      0%{transform: translateX(3.125vw);}
-    50% { transform: translateX(-2.6042vw); }
+    50% { transform: translateX(-13.6042vw); }
     100%{transform: translateX(3.125vw);}
 }
 
@@ -739,12 +739,18 @@ footer {
     .funding-disclosure-block h4, strong{
         font-size: 2.94vw;
     }
-    funding-disclosure-block p.funding-intro, span{
+    div.channel-box p{
+        font-size: 2.0vw;
+    }
+    p.funding-intro{
         font-size: 2.04vw;
         color: #555;
     }
+    p.funding-bullets li{
+        font-size: 2.04vw;
+    }
 
-    /* Other Panels */
+    /* why doxa */
     .why, .why span{ font-size: 3.5vw; margin-bottom: 1.04vw; }
     .cards { grid-template-columns: repeat(3, 1fr); gap: 0.92vw; max-width: 74vw; }
     .card { padding: 1.8vw 0.8vw; border: 0.52 solid #555; border-radius: 1.72vw
@@ -753,14 +759,14 @@ footer {
              width: 1.4vw;
              height: 1.4vw;
              font-size: 0.72vw; margin-bottom: 0.46vw; }
-    .card h4 { font-size:0.52vw; margin-bottom: 0.2vw; }
-    .card p { font-size: 0.5vw; }
+    .card h4 { font-size:2.52vw; margin-bottom: 0.2vw; }
+    .card p { font-size: 1.5vw; }
 
     .main2 { grid-template-columns: 1fr 1fr; gap: 1.04vw; margin: 2.08vw auto; max-width: 100vw;}
     .join, .fut { padding: 0.8vw; font-size: 0.625vw; border-radius: 0.52vw; }
     .jf1, .jf2 { height: 20.52vw; border-radius: 0.52vw; }
     .start h1, h1 span{ font-size: 4.94vw; }
-    .start h3{
+    .start h3, .start p{
         font-size: 1.94vw;
     }
     
@@ -769,10 +775,167 @@ footer {
 }
 
 @media (max-width: 480px) {
-    .f3, .f1, .net, .hand { min-height: 6vw; height: 6vw; }
-    .net p, .hand p { font-size: 0.52vw; }
-    .leg h1 { font-size: 1.25vw; }
-    .leg p { font-size: 0.57vw; }
-    .cards { grid-template-columns: repeat(2, 1fr); }
+header.top { height: 3.125vw; padding: 0 0.8vw; }
+    .logo { height: 1.7vw; }
+    
+    .ham {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.14vw;
+        color: black;
+        cursor: pointer;
+    }
+    .nav-overlay {
+        display: block !important;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0);
+        z-index: 998;
+        pointer-events: none;
+        transition: background 0.3s ease;
+    }
+    #menu:checked ~ .nav-overlay { background: rgba(0, 0, 0, 0.5); pointer-events: auto; }
+    .top .nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 23.125vw;
+        background: white;
+        z-index: 999;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    }
+    #menu:checked ~ .nav { transform: translateX(0); }
+    .nav-close-row { display: flex !important; justify-content: flex-end; padding: 0.8vw; border-bottom:0.52vw solid #eee; }
+    .nav-close { font-size: 1.14vw; color: black; cursor: pointer; }
+    .top .nav li { display: block; border-bottom:0.52vw solid #f5f5f5; }
+
+    /* Stagger Grid Responsive Mobile Setup */
+    #section1 .img { 
+        grid-template-columns: 1fr 1fr; 
+        width: 100%;
+        gap: 1.4vw; 
+    }
+    .grid-left-gallery { 
+        column-gap: 0.625vw; 
+        row-gap: 0.625vw;
+        max-width: 35vw;
+        max-height: 100vw;
+        margin-left: 5vw;
+     }
+    .f3, .f1 { 
+        height: 27.3vw; 
+        border-radius: 0.625vw; 
+    }
+    .net, .hand {  
+    padding: 1.2vw 1.81vw;
+    display: flex;
+    text-align: start;
+}
+    
+    .net h4, .hand h4 { 
+        font-size: 1.7vw; 
+        margin: 0 0 0.3vw 0; 
+        font-weight: 700; 
+        line-height: 1.2; 
+    }
+    .net p, .hand p { 
+        font-size: 1.52vw;
+         line-height: 1.4; }
+    .leg{
+        width: 40vw;
+    }
+    .leg h1 { 
+        font-size: 5.77vw; 
+        margin-bottom: 0.625vw; }
+    .leg p { 
+        font-size: 2.42vw; 
+        line-height: 1.6; }
+
+    /* Section 2 Sizing Downscales */
+    .year { font-size: 3.24vw; }
+    .line { padding: 1.04vw 0; width: 100%;  }
+    .itf, .nab, .party { padding-top: 2.625vw; margin-bottom: 1.04vw; border-radius: 0.52vw
+; width: 30vw; animation: mobileslidein 8s infinite; left: 5%; }
+.mid, .grad{
+    padding-top: 2.625vw; margin-bottom: 1.04vw; border-radius: 0.52vw; width: 30vw; left:65%; animation: mobileslideout 8s infinite;
+}
+    .bot { font-size: 0.52vw; line-height: 1.3; color: #555; }
+@keyframes mobileslidein {
+    0%{transform: translateX(0vw);}
+    50% { transform: translateX(13.6042vw); }
+    100%{transform: translateX(-5vw);}
+}
+@keyframes mobileslideout { 
+     0%{transform: translateX(0vw);}
+    50% { transform: translateX(-13.6042vw); }
+    100%{transform: translateX(5vw);}
+}
+    /* Section 5 Mobile Fluid Compression Layouts */
+    #section5 { padding: 2.6vw 0.8vw; justify-self: center; width: 100%; }
+    .fees-header{max-width: 100vw;justify-self: center;}
+    .fees-header h2, h2 span{ font-size: 4.67vw; max-width: 50vw;}
+    .fees-badge-pill{max-width: 37vw;}
+    .fees-header p{
+        font-size: 2.7vw; max-width: 50vw;}
+    .personalized-card { padding: 4.5vw 1.04vw; max-width: 79vw;}
+   .personalized-card p.card-sub-prose{
+    font-size: 2.44vw;
+    justify-self: center;
+    max-width: 60vw;
+    margin: 0;
+   }
+    .personalized-card h3, .personalized-card h5{ font-size: 3.04vw; }
+    .personalized-channels { grid-template-columns: 1fr 1fr 1fr; gap: 1.625vw; }
+    .channel-box { padding: 0.82vw; }
+    .funding-disclosure-block { padding: 1.04vw; max-width: 70vw; }
+    .funding-disclosure-block h4, strong{
+        font-size: 2.94vw;
+    }
+    div.channel-box p{
+        font-size: 2.0vw;
+    }
+    p.funding-intro{
+        font-size: 2.04vw;
+        color: #555;
+    }
+    p.funding-bullets li{
+        font-size: 2.04vw;
+    }
+
+    /* why doxa */
+    .why, .why span{ font-size: 3.5vw; margin-bottom: 1.04vw; }
+    .cards { grid-template-columns: repeat(3, 1fr); gap: 0.92vw; max-width: 74vw; }
+    .card { padding: 1.8vw 0.8vw; border: 0.52 solid #555; border-radius: 1.72vw
+; }
+    .card i { 
+             width: 1.4vw;
+             height: 1.4vw;
+             font-size: 0.72vw; margin-bottom: 0.46vw; }
+    .card h4 { font-size:2.52vw; margin-bottom: 0.2vw; }
+    .card p { font-size: 1.5vw; }
+
+    .main2 { grid-template-columns: 1fr 1fr 1fr; gap: 1.04vw; margin: 2.08vw auto; max-width: 100vw;}
+    .join, .fut { padding: 0.8vw; font-size: 0.625vw; border-radius: 0.52vw; }
+    .jf1, .jf2 { height: 20.52vw; border-radius: 0.52vw; }
+    .start{margin-bottom: 12vw;}
+    .start h1, h1 span{ font-size: 4.94vw; }
+    .start h3, .start p{
+        font-size: 1.94vw;
+    }
+    .join-img{
+        column-gap: 0.625vw; 
+        row-gap: 0.625vw;
+        max-width: 35vw;
+        max-height: 100vw;
+        margin-left: 5vw;
     }
     
+    footer { grid-template-columns: repeat(3, 1fr); gap: 0.8vw; padding: 1.5vw 4%; margin: 0vw; position: sticky;}
+    .about p, .quick a, .contact p { font-size: 0.57vw; }
+}
