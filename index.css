@@ -254,11 +254,11 @@ header.top {
 
 @keyframes slideFromLeft {
     0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(15px); }
+    50% { transform: translateX(16px); }
 }
 @keyframes slideFromRight {
     0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(-15px); }
+    50% { transform: translateX(-16px); }
 }
 
 .itf .date, .mid .date, .nab .date, .grad .date, .party .date {
