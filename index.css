@@ -195,8 +195,8 @@ header.top {
     color: #777;
     font-weight: normal;
     text-transform: uppercase;
-    margin-top: 4px;
-    letter-spacing: 0.5px;
+    margin-top: 0.2vw;
+    letter-spacing: 0.026vw;
 }
 
 .f3   { grid-column: 1; grid-row: 1; }
@@ -227,7 +227,7 @@ header.top {
     color: red;
     font-weight: bold;
     font-size: 0.625vw;
-    letter-spacing: 1px;
+    letter-spacing: 0.005vw;
 }
 .year {
     font-family: 'Sanchez', sans-serif;
@@ -251,7 +251,7 @@ header.top {
     top: 0;
     bottom: 0;
     left: 50%;
-    width: 2px;
+    width: 0.14vw;
     background-color: #e32626;
     transform: translateX(-50%);
     z-index: 1;
@@ -266,11 +266,11 @@ header.top {
     box-shadow: 0 0.52vw 1.5vw rgba(0,0,0,0.05);
     z-index: 5;
     margin-bottom: 2.0833vw;
-    border: 2px solid transparent;
+    border: 0.01vw solid transparent;
 }
 .itf:hover, .nab:hover, .mid:hover, .party:hover, .grad:hover{
     border-color: red;
-    transform: translateY(-5px);
+    transform: translateY(-0.26vw);
     box-shadow: 0 0.52vw 1.6vw rgba(255, 0, 0, 0.08);
 }
 
@@ -294,7 +294,7 @@ header.top {
     font-weight: bold;
     text-transform: uppercase;
     color: red;
-    padding: 4px 0.625vw;
+    padding: 0.23vw 0.625vw;
     background-color: rgba(234, 83, 83, 0.1);
     border-radius: 1.04vw;
     margin-bottom: 0.8vw;
@@ -347,7 +347,7 @@ header.top {
     background-color: #ffebee;
     padding: 0.2vw 0.625vw;
     border-radius: 1.4vw;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.02vw;
     text-transform: uppercase;
 }
 .fees-header h2 {
@@ -390,7 +390,7 @@ header.top {
     font-size: 1.35vw;
     font-weight: 600;
     margin: 0 0 0.67vw 0;
-    letter-spacing: -0.3px;
+    letter-spacing: -0.0156vw;
 }
 .card-sub-prose {
     color: #a3b1cc;
@@ -495,7 +495,7 @@ header.top {
 }
 .card:hover {
     border-color: red !important;
-    transform: translateY(-5px);
+    transform: translateY(-0.26vw);
     box-shadow: 0 0.52vw 1.5vw rgba(255, 0, 0, 0.08);
 }
 .card i {
@@ -569,7 +569,7 @@ header.top {
 .start h1 span { color: red; }
 
 .us, .add, .mail { margin-bottom: 1.5vw; }
-.us h3, .add h3, .mail h3 { margin: 0 0 6px 0; font-size: 0.72vw; color: #888; text-transform: uppercase; }
+.us h3, .add h3, .mail h3 { margin: 0 0 0.3vw 0; font-size: 0.72vw; color: #888; text-transform: uppercase; }
 .us p, .add p, .mail p { margin: 0; font-size: 0.82vw; font-weight: bold; }
 .us p i, .add p i, .mail p i { margin-right: 0.52vw; }
 
@@ -619,7 +619,7 @@ footer {
    ============================================================ */
 @media (max-width: 768px) {
     header.top { height: 3.125vw; padding: 0 0.8vw; }
-    .logo { height: 32px; }
+    .logo { height: 1.7vw; }
     
     .ham {
         display: inline-flex !important;
@@ -659,27 +659,27 @@ footer {
     .top .nav li { display: block; border-bottom:0.52vw solid #f5f5f5; }
 
     /* Stagger Grid Responsive Mobile Setup */
-    #section1 .img { grid-template-columns: 1fr; gap: 35px; }
+    #section1 .img { grid-template-columns: 1fr; gap: 1.4vw; }
     .grid-left-gallery { column-gap: 0.625vw; row-gap: 0.625vw; }
-    .f3, .f1 { min-height: 140px; height: 140px; border-radius: 0.625vw; }
-    .net, .hand { min-height: 140px; padding: 0.82vw 0.72vw; border-radius: 0.625vw; justify-content: flex-start; }
+    .f3, .f1 { min-height: 7.3vw; height: 7.3vw; border-radius: 0.625vw; }
+    .net, .hand { min-height: 7.3vw; padding: 0.82vw 0.72vw; border-radius: 0.625vw; justify-content: flex-start; }
     
-    .net h4, .hand h4 { font-size: 0.67vw; margin: 0 0 6px 0; font-weight: 700; line-height: 1.2; }
+    .net h4, .hand h4 { font-size: 0.67vw; margin: 0 0 0.3vw 0; font-weight: 700; line-height: 1.2; }
     .net p, .hand p { font-size: 0.52vw
 ; line-height: 1.4; }
-    .leg h1 { font-size: 34px; margin-bottom: 0.625vw; }
+    .leg h1 { font-size: 1.77vw; margin-bottom: 0.625vw; }
     .leg p { font-size: 0.72vw; line-height: 1.6; }
 
     /* Section 2 Sizing Downscales */
-    .year { font-size: 26px; }
+    .year { font-size: 1.24vw; }
     .line { padding: 1.04vw 0; }
     .itf, .mid, .nab, .grad, .party { padding: 0.625vw; margin-bottom: 1.04vw; border-radius: 0.52vw
 ; width: 44%; }
-    .bot { font-size: 9.5px; line-height: 1.3; }
+    .bot { font-size: 0.52vw; line-height: 1.3; }
 
     /* Section 5 Mobile Fluid Compression Layouts */
     #section5 { padding: 2.6vw 0.8vw; }
-    .fees-header h2 { font-size: 32px; }
+    .fees-header h2 { font-size: 1.67vw; }
     .personalized-card { padding: 1.5vw 1.04vw; }
     .personalized-card h3 { font-size: 1.04vw; }
     .personalized-channels { grid-template-columns: 1fr; gap: 0.625vw; }
@@ -687,16 +687,19 @@ footer {
     .funding-disclosure-block { padding: 1.04vw; }
 
     /* Other Panels */
-    .why { font-size: 28px; margin-bottom: 1.04vw; }
+    .why { font-size: 1.5vw; margin-bottom: 1.04vw; }
     .cards { grid-template-columns: repeat(3, 1fr); gap: 0.52vw
 ; }
-    .card { padding: 0.8vw 8px; border-radius: 0.52vw
+    .card { padding: 0.8vw 0.4vw; border-radius: 0.52vw
 ; }
-    .card i { width: 35px; height: 35px; font-size: 0.72vw; margin-bottom: 8px; }
-    .card h4 { font-size:0.52vw; margin-bottom: 4px; }
-    .card p { font-size: 9px; }
+    .card i { 
+             width: 1.4vw;
+             height: 1.4vw;
+             font-size: 0.72vw; margin-bottom: 0.46vw; }
+    .card h4 { font-size:0.52vw; margin-bottom: 0.2vw; }
+    .card p { font-size: 0.5vw; }
 
-    .main2 { grid-template-columns: 1fr 1fr; gap: 1.04vw; margin: 40px auto; }
+    .main2 { grid-template-columns: 1fr 1fr; gap: 1.04vw; margin: 2.08vw auto; }
     .join, .fut { padding: 0.8vw; font-size: 0.625vw; border-radius: 0.52vw
 ; }
     .jf1, .jf2 { height:  0.52vw
@@ -705,14 +708,14 @@ footer {
     .start h1 { font-size: 1.14vw; }
     
     footer { grid-template-columns: repeat(3, 1fr); gap: 0.8vw; padding: 1.5vw 4%; }
-    .about p, .quick a, .contact p { font-size: 11px; }
+    .about p, .quick a, .contact p { font-size: 0.57vw; }
 }
 
 @media (max-width: 480px) {
-    .f3, .f1, .net, .hand { min-height: 155px; height: 155px; }
-    .net p, .hand p { font-size: 9.5px; }
+    .f3, .f1, .net, .hand { min-height: 6vw; height: 6vw; }
+    .net p, .hand p { font-size: 0.52vw; }
     .leg h1 { font-size: 1.25vw; }
-    .leg p { font-size: 11px; }
+    .leg p { font-size: 0.57vw; }
     .cards { grid-template-columns: repeat(2, 1fr); }
     }
     
