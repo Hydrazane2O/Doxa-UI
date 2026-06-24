@@ -133,16 +133,13 @@ header.top {
     width: 15.625vw;
     
 }
-.f1{
-    margin-top: -7.8vw;
-}
 .net, .hand {
     padding: 1.5vw 1.1vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    height: 7.8vw;
+    max-height: 7.8vw;
     width: 17.02vw;
 }
 .net {  background-color: #0e1726; color: white; }
@@ -152,10 +149,15 @@ header.top {
     margin: 0 0 0.52vw 0;
     font-size: 1.04vw;
     font-weight: 700;
+    
+    max-width: 17.02vw;
+    max-height: 7.8vw;
 }
 .net p, .hand p {
     margin: 0;
     font-size: 0.79vw;
+    max-width: 17.02vw;
+    max-height: 7.8vw;
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.9);
 }
@@ -200,9 +202,9 @@ header.top {
 }
 
 .f3   { grid-column: 1; grid-row: 1; }
-.net  { grid-column: 2; grid-row: 1; }
+.net  { grid-column: 2; grid-row: 2; }
 .hand { grid-column: 1; grid-row: 2; }
-.f1   { grid-column: 2; grid-row: 2; }
+.f1   { grid-column: 2; grid-row: 1; }
 
 /* ---------- Section 2: Sliding Timeline System ---------- */
 #section2 {
@@ -528,7 +530,7 @@ header.top {
     display: grid; 
     grid-template-columns: 1fr 1fr; 
     gap: 1.04vw;
-    max-height:39vw;
+    max-height:30vw;
     row-gap: 1.4vw;
     width: 100%;
     max-width: 52.0833vw;
@@ -572,8 +574,8 @@ header.top {
 
 .jf2   { grid-column: 1; grid-row: 1; }
 .fut  { grid-column: 1; grid-row: 2; }
-.join { grid-column: 2; grid-row: 1; }
-.jf1   { grid-column: 2; grid-row: 2; }
+.join { grid-column: 2; grid-row: 2; }
+.jf1   { grid-column: 2; grid-row: 1; }
 
 /* ---------- Footer Rows ---------- */
 footer {
@@ -614,7 +616,7 @@ footer {
 /* ============================================================
    RESPONSIVE MEDIA SYSTEM (PHONE INTERFACE RESPONSIVENESS)
    ============================================================ */
-@media (max-width: 768px) {
+@media (max-width: 770px) {
     header.top { height: 3.125vw; padding: 0 0.8vw; }
     .logo { height: 1.7vw; }
     
