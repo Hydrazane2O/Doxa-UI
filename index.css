@@ -1,988 +1,584 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sanchez:ital@0;1&family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sanchez:ital@0;1&family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap');
 
-html{
+/* ---------- Global Baseline Reset ---------- */
+*, *::before, *::after { 
+    box-sizing: border-box; 
+}
+html {
     scroll-behavior: smooth;
 }
-body{
-    margin: 0px;
-    padding: 0px;
+body {
+    margin: 0;
+    padding: 0;
     font-family: Arial, Helvetica, sans-serif;
+    max-width: 100%;
+    overflow-x: hidden;
 }
-header{
+img, video { 
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+}
+
+/* ---------- Header Navigation ---------- */
+header {
     position: sticky;
     top: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.836);
-    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.top {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4%;
+    overflow: visible;
+}
+.logo-link {
     display: flex;
     align-items: center;
 }
-.logo{
+.logo {
     height: 50px;
-    width: 70px;
-    margin-left: 30px;
-    margin-right: 150px;
-
+    width: auto;
 }
-.top ul{
-    margin: 0%;
-    padding: 0%;
+.top .nav {
+    margin: 0;
+    padding: 0;
     list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
-.top li{
-    float: left;
+.top li {
+    display: inline-block;
 }
-.top{
-    height: 70px;
-}
-.top a{
-    padding: 20px;
-    padding-top: 30px;
+.top a {
+    padding: 15px 20px;
     display: block;
     text-decoration: none;
     color: black;
     text-transform: uppercase;
-    font-weight: lighter;
-    font-size: 12px;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    transition: color 0.2s ease;
 }
-.top a:hover{
+.top a:hover {
     color: red;
 }
-#menu, .ham , label i{
-    display: none !important;
+
+/* Hide navigation toggles on desktop viewports */
+#menu, .ham, .nav-close-row, .nav-overlay {
+    display: none;
 }
-.enroll{
-    background-color: red;
+
+/* ---------- Hero / Section Basics ---------- */
+#home {
+    height: 400px;
+    width: 100%;
+    background: linear-gradient(135deg, #111, #222);
     color: white;
-    border: none;
-    height: 35px;
-    width: 110px;
-    font-size: 15px;
-    border-radius: 40px;
-    margin-left: 150px;
-    margin-top: -10px;
-   
-}
-.enroll:hover{
-    cursor: pointer;
-    transform: rotate(5deg, 5deg) scale(1.5);
-    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.3);
-}
-#home{
-    height: 700px;
-    width: 100%;
-    background-color: rgb(38, 255, 0);
-    display: inline-block;
-    text-align: center;
-}
-#section1{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-content: space-around;
-    width: 95%;
-    margin: 0 auto;
-    margin-bottom: 40px;}
-.img{
-    width: 90%;
-    max-width: 800px;
-    display: grid;
-    justify-content: space-around;
-    grid-template-columns:1fr 1.2fr;
-    align-items: center;
-    grid-auto-rows: min-content;
-    gap: 10px;
-    height: auto;
-}
-.net{
-    background-color: black;
-    color: white;
-    width: 300px;
-    text-align: center;
-    border-radius: 20px;
-    padding: 50px;
-    font-size: 20px;
-    grid-row: 1;
-    grid-column: 4;
-}
-.f1{
-    width: 400px;
-    height:450px;
-    border-radius: 20px;
-    grid-row: 1 / 3;
-    grid-column: 3;
-    overflow: hidden;
-}
-.hand{
-    background-color: rgb(255, 0, 0);
-    color: white;
-    width: 320px;
-    border-radius: 20px;
-    padding: 40px;
-    font-size: 20px;
-    overflow:hidden;
-    margin-top: 100px;
-    grid-row: 2;
-    grid-column: 3;
-    text-align: center;
-}
-.f3{
-    border-radius: 20px;
-    grid-row: 2;
-    grid-column: 4;
-    width: 400px;
-    height: 550px;
-    margin-top: -200px;
-}
-.f1, .f3{
-    display: block;
-    object-fit: cover;
-}
-.leg{
-    margin-top: 20px;
-    text-transform: capitalize;
-    font-family: "Sanchez", sans-serif;
-    padding-top: 20px;
-    height: 500px;
-    width: 500px;
-    margin-right: 40px;
-}
-.leg h1{
-    font-size: 73px;
-}
-.leg p{
-    font-size: 23px;
-}
-.leg span{
-    color: red;
-    margin-left: -0px;
-}
-#section1 p, h4{
-    margin: 0;
-}
-#section2{
-    height: 100%;
-    width: 100%;
-}
-.first{
-    width: 700px;
-    text-align: center;
-    flex-direction: column;
-    display: flex;
-    justify-self: center;
-}
-.first ul{
-    list-style:disc;
-    color: red;
-    padding-top: 5px;
-    height: 22px;
-    width: 200px;
-    background-color: rgba(234, 83, 83, 0.219);
-    border-radius: 10px;
-    position: relative;
-    line-height: 0.3;
-    align-self: center;
-}
-.first li::marker{
-    font-size: 30px;
-}
-.year{
-    font-family: 'sanchez';
-    font-size: 60px;
-    font-weight: 400;
-}
-.year span{
-    margin: 0;
-    color: red;
-}
-.time{
-    height: 1000px;
-    display: flex;
-    justify-self: center;
-    grid-column: 2;
-    grid-row: 1 / 5;
-}
-.line{
-    width: 70%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-self: center;
-}
-.itf:hover, .mid:hover, .nab:hover, .grad:hover, .party:hover{
-    border: 1px solid red;
-    transform: rotate(5deg, 5deg) scale(1.5);
-    box-shadow:  8px 8px 12px rgba(0, 0, 0, 0.564) ;
-}
-.itf{
-    width: 250px;
-    height: 150px;
-    border-radius: 20px;
-    text-align: left;
-    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.208);
-    padding: 20px;
-    font-family: 'inter';
-    grid-column: 1;
-    grid-row: 1;
-    animation: left 6s infinite;
-}
-@keyframes left{
-    0%{transform: translatex(0);}
-    50%{transform: translatex(230px);}
-    75%{transform: translateX(0);}
-    100%{transform: translateX(0);}
-}
-.itf .date{
-    font-size: 12px;
-    text-align: center;
-    color: red;
-    padding-top: 5px;
-    height: 22px;
-    width: 70%;
-    background-color: rgba(234, 83, 83, 0.219);
-    border-radius: 20px;
-    left: 90px;
-    position: relative;
-    text-transform: capitalize;
-}
-.itf i{
-    position: relative;
-    bottom: 40px;
-    font-size: 40px;
-    padding: 0;
-}
-.itf h6{
-    font-size: 20px;
-    margin: -20px 0 5px 0;
-}
-.bot{
-    font-size: 12px;
-    margin: 0;
-}
-.mid{
-    width: 250px;
-    height: 150px;
-    border-radius: 20px;
-    text-align: left;
-    box-shadow: 5px 5px 5px 5px #00000035;
-    padding: 20px;
-    font-family: 'inter';
-    grid-column: 3;
-    grid-row: 2;
-    position: relative;
-    bottom: 60px;
-    animation: right 6s infinite;
-}
-@keyframes right{
-    0%{transform: translatex(0)}
-    50%{transform: translatex(-180px)}
-    75%{transform: translateX(0px);}
-    100%{transform: translateX(0px);}
-}
-.mid .date{
-    font-size: 12px;
-    text-align: center;
-    color: rgb(255, 128, 0);
-    padding-top: 5px;
-    height: 22px;
-    width: 40%;
-    background-color: rgba(234, 83, 83, 0.219);
-    border-radius: 20px;
-    left: 150px;
-    position: relative;
-    text-transform: capitalize;
-}
-.nab{
-     width: 250px;
-    height: 150px;
-    border-radius: 20px;
-    text-align: left;
-    box-shadow: 5px 5px 5px 5px #00000035;
-    padding: 20px;
-    font-family: 'inter';
-    grid-column: 1;
-    grid-row: 3;
-    position: relative;
-    bottom:100px;
-    animation: left 6s infinite ;
-}
-.nab .date{
-    font-size: 12px;
-    text-align: center;
-    color: rgb(255, 128, 0);
-    padding-top: 5px;
-    height: 22px;
-    width: 60%;
-    background-color: rgba(234, 83, 83, 0.219);
-    border-radius: 20px;
-    left: 110px;
-    position: relative;
-    text-transform: capitalize;
-}
-.nab i, .grad i, .mid i, .party i{
-    font-size: 40px;
-    position: relative;
-    bottom: 40px;
-}
-.nab h6, .grad h6, .mid h6, .party h6{
-    margin-top: -20px;
-    font-size: 20px;
-    margin-bottom: 5px;
-}
-.grad{
-    width: 250px;
-    height: 150px;
-    border-radius: 20px;
-    text-align: left;
-    box-shadow: 5px 5px 5px 5px #00000035;
-    padding: 20px;
-    font-family: 'inter';
-    grid-column: 3;
-    grid-row: 4 / 5;
-    position: relative;
-    bottom: 150px;
-    animation: right 6s infinite;
-}
-.grad .date{
-    font-size: 12px;
-    text-align: center;
-    color: #99C36E;
-    padding-top: 5px;
-    height: 22px;
-    width: 40%;
-    background-color: rgba(83, 234, 93, 0.219);
-    border-radius: 20px;
-    left: 120px;
-    position: relative;
-    text-transform: capitalize;
-}
-.party{
-    width: 250px;
-    height: 150px;
-    border-radius: 20px;
-    text-align: left;
-    box-shadow: 5px 5px 5px 5px #00000035;
-    padding: 20px;
-    font-family: 'inter';
-    grid-column: 1;
-    grid-row: 5;
-    position: relative;
-    bottom:179px;
-    animation: left 6s infinite;
-}
-.party .date{
-    font-size: 12px;
-    text-align: center;
-    color: #209BBA;
-    padding-top: 5px;
-    height: 22px;
-    width: 40%;
-    background-color: rgba(83, 201, 234, 0.219);
-    border-radius: 20px;
-    left: 120px;
-    position: relative;
-    text-transform: capitalize;
-}
-#section3{
-    height: 700px;
-    width: 100%;
-    background-color: green;
-    display: inline-block;
-    text-align: center
-}
-#section4{
-    height: 700px;
-    width: 100%;
-    background-color: red;
-    display: inline-block;
-    text-align: center
-}
-#section5{
-    height: 700px;
-    width: 100%;
-    background-color: purple;
-    display: inline-block;
-    text-align: center
-}
-#section6{  
-    font-family:"Sanchez", sans-serif ;
-    margin: 50px;
-    display: grid;
-    gap: 30px;
-    grid-template-columns: 1fr 2fr;
-}
-#section6 h1{
-    font-size: 60px;
-    text-transform: capitalize;
-    font-weight: 400;
-}
-#section6 h1 span{
-    color: red;
-    margin-left: -0px;
-}
-#section6 p{
-    font-size: 20px;
-    width: 700px;
-    word-break:normal;
-}
-#section6 i{
-    width: 35px;
-    height: 35px;
-    border: 1px solid grey;
-    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
-.us, .add, .mail{
-    display: flex;
+#home h1 {
+    font-family: "Sanchez", sans-serif;
+    font-size: 60px;
+    letter-spacing: 2px;
+}
+
+/* ---------- Section 1: Overview Grid System ---------- */
+#section1 {
+    width: 90%;
+    max-width: 1200px;
+    margin: 80px auto;
+}
+.img {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 25px;
 }
-.us p, .add p, .mail p{
+.overview-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+.f1, .f3 {
+    width: 100%;
+    height: 380px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.net, .hand {
+    color: white;
+    border-radius: 20px;
+    padding: 40px 30px;
+    font-size: 16px;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+.net { background-color: black; }
+.hand { background-color: rgb(255, 0, 0); }
+
+.net h4, .hand h4 {
+    margin: 0 0 10px 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+.leg {
+    text-transform: capitalize;
+    font-family: "Sanchez", sans-serif;
+}
+.leg h1 {
+    font-size: 64px;
+    margin: 0 0 20px 0;
+    line-height: 1.1;
+}
+.leg h1 span { color: red; }
+.leg p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    margin: 0 0 15px 0;
+}
+.leg-meta {
+    margin-top: 35px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.meta-item {
+    font-size: 18px;
     font-weight: bold;
 }
-.us h3, .add h3, .mail h3{
-    margin-bottom: -20px;
-    font-weight: 400;
-    font-size: 16px;
-    color: #6c757d;
+.meta-item span {
+    display: block;
+    font-size: 14px;
+    color: gray;
+    font-weight: normal;
+    margin-top: 5px;
 }
-.que{
-    width: 500px;
-    height: 500px;
-    border-radius: 10px;
-    margin-top: 40px;
-}
-footer{
-    background-color: #162249;
-    padding-right: 60px 8%;
-    padding-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
-}
-.about p{
-    font-size: 20px;
-    color:#6c757d;
-    margin-right: 100px;
-}
-.about{
-    flex: 3;
-    padding-right: 150px;
-}
-.about, .quick, .contact{
-    flex: 1;
-    min-width: 400px;
-}
-.quick h4{
-    margin-bottom: 20px;
-    font-size: 13px;
-    color: #6c757d;
-    text-transform: uppercase;
-    font-weight: lighter;
-}
-.quick ul{
-    display: flex;
-    flex-direction: column;
-    text-decoration: none; 
-    margin-bottom: 5px;
-    max-width: 90px;
-}
-.quick a{
-    color: white;
-    text-decoration: none;
-    font-size: 11px;
-    font-weight:lighter;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-}
-.quick a:hover{
-    color: red;
-}
-.quick{
-    margin-left: 120px;
-    margin-right: 0;
-    max-width:200px
-}
-.contact{
-    margin-top: 40px;
-}
-.contact p{
-    color: white;
-}
-.bottom{
-    background-color:  #162249;
-    width: 100%;
-    margin-top: none;
-    color: white;
-    padding-top: 20px;
-    padding-bottom: 10px;
-}
-.bottom hr{
-    color: black;
-}
-.about i{
-    width:30px;
-    height: 30px;
-    border: 3px solid rgba(149, 180, 205, 0.068);
-    border-radius: 50%;
-    background-color: rgba(178, 205, 227, 0.192);
-    box-sizing: border-box;
-    position: relative;
-    margin-right: 15px;
-}
-.about i::before{
-    position: absolute;
-    top: 50%;
-    bottom: 50%;
-    transform: translate(-50%, -50%);
-}
-span{
-    margin-left: 30px;
-}
-/* (old mobile nav block removed — replaced by the RESPONSIVE OVERHAUL below) */
 
-   
-/* ============================================================
-   Why Doxa + Join sections (merged from why.css)
-   Header, footer, navigation, .about, .quick, .contact,
-   .bottom and the mobile media-query were removed as duplicates.
-   Image / .img / .f1 / .f2 selectors are scoped to the merged
-   sections to avoid clobbering #section1 styles.
-   ============================================================ */
-
-#why {
-    padding: 40px 20px;
+/* ---------- Section 2: Curriculum Timeline ---------- */
+#section2 {
+    padding: 80px 0;
+    background-color: #fbfbfb;
+}
+.first {
+    width: 90%;
+    max-width: 700px;
     text-align: center;
+    margin: 0 auto 50px auto;
+}
+.first ul {
+    list-style: none;
+    padding: 8px 16px;
+    background-color: rgba(234, 83, 83, 0.15);
+    border-radius: 50px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+.first li {
+    color: red;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+.year {
+    font-family: 'Sanchez', sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+    margin: 10px 0;
+}
+.year span { color: red; }
+
+.timeline-container {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto 0 auto;
+    padding: 20px 0;
+}
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background-color: #ddd;
+    transform: translateX(-50%);
+}
+.timeline-card {
+    position: relative;
+    width: 45%;
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    font-family: 'Inter', sans-serif;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid transparent;
+}
+.timeline-card:hover {
+    border: 1px solid red;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(234, 83, 83, 0.15);
+}
+.timeline-card.left { left: 0; }
+.timeline-card.right { left: 55%; }
+
+.timeline-card .date {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: red;
+    padding: 4px 12px;
+    background-color: rgba(234, 83, 83, 0.1);
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+.timeline-card i {
+    font-size: 32px;
+    display: block;
+    margin-bottom: 15px;
+    color: #111;
+}
+.timeline-card h6 {
+    font-size: 20px;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+}
+.timeline-card .bot {
+    font-size: 13px;
+    color: #666;
+    margin: 0;
+    line-height: 1.5;
+}
+.time { display: none; }
+
+/* ---------- Placeholder Custom Base Section Blocks ---------- */
+#section3, #section4, #section5 {
+    padding: 100px 20px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-family: "Sanchez", sans-serif;
+}
+#section3 { background-color: #2e7d32; }
+#section4 { background-color: #c62828; }
+#section5 { background-color: #4a148c; }
+
+/* ---------- Why Doxa Section ---------- */
+#why {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #fff;
 }
 .why {
     font-family: "Sanchez", sans-serif;
-    font-size: 70px;
+    font-size: 55px;
     font-weight: 400;
+    margin-bottom: 40px;
 }
-.why span {
-    color: red;
-    font-style: italic;
-}
+.why span { color: red; font-style: italic; }
+
 .cards {
-    display: flex;
-    gap: 30px;
-    padding: 40px 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-    max-width: 1400px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0;
 }
 .card {
-    flex: 1 1 auto;
-    width: 100%;
-    max-width: 320px;
-    min-width: 180px;
-    margin: 0 auto;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: white;
+    border-radius: 20px;
+    border: 2px solid #eee;
+    padding: 40px 25px;
     text-align: center;
-    border-radius: 17px;
-    border: 3px solid red;
-    padding: 40px 20px 20px;
-    background-color: rgba(255, 255, 255, 0.518);
-    box-sizing: border-box;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+    transition: all 0.3s ease;
 }
-.card p {
-    margin-top: -20px;
+.card:hover {
+    border-color: red;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
 }
 .card i {
-    width: 55px;
-    height: 55px;
+    width: 60px;
+    height: 60px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    border: 30px solid rgb(237, 165, 165);
+    background-color: rgba(198, 40, 40, 0.1);
+    color: #c62828;
     border-radius: 50%;
-    background-color: rgb(237, 165, 165);
-    box-sizing: border-box;
-    font-size: 20px;
-    position: relative;
+    font-size: 24px;
+    margin-bottom: 20px;
 }
-.card i::before {
-    position: absolute;
-    top: 50%;
-    bottom: 50%;
-    transform: translate(-50%, -50%);
+.card h4 {
+    margin: 0 0 12px 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+.card p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
 }
 
+/* ---------- Conversion Banner (Main2) ---------- */
 .main2 {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    justify-content: center;
-    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
     max-width: 1200px;
-    margin: 0 auto;
-}
-.main2 h1 {
-    font-weight: 500;
-}
-.main2 h1 span {
-    color: red;
-}
-.main2 p,
-.main2 h3 {
-    margin: 0;
+    margin: 80px auto;
+    padding: 0 5%;
+    align-items: center;
 }
 .join-img {
-    flex: 1;
-    min-width: 280px;
-    display: grid;
-    gap: 15px;
-}
-.join span {
-    color: red;
-    margin: 0 5px;
-}
-.join {
-    background-color: black;
-    justify-content: center;
     display: flex;
-    padding: 50px;
+    flex-direction: column;
+    gap: 20px;
 }
-.join,
-.fut {
+.join, .fut {
     width: 100%;
-    box-sizing: border-box;
+    padding: 30px;
     text-align: center;
     color: white;
-    font-size: 20px;
+    font-size: 22px;
     border-radius: 20px;
+    font-weight: bold;
+    margin: 0;
 }
-.fut {
-    background-color: rgb(255, 0, 0);
-    justify-content: center;
-    display: flex;
-    padding: 60px;
-    margin-top: -110px;
-}
-.fut span {
-    color: rgb(16, 16, 112);
-    margin-right: 5px;
-}
-.jf1,
-.jf2 {
-    height: auto;
-    border-radius: 20px;
+.join { background-color: black; }
+.join span { color: red; }
+.fut { background-color: red; }
+.fut span { color: #162249; }
+
+.jf1, .jf2 {
     width: 100%;
+    height: 250px;
+    border-radius: 20px;
     object-fit: cover;
 }
 .start {
-    flex: 1;
-    min-width: 280px;
-    text-transform: capitalize;
     font-family: "Sanchez", sans-serif;
-    font-size: 23px;
 }
-.main2 .us,
-.main2 .add,
-.main2 .mail {
-    margin-bottom: 15px;
+.start h1 {
+    font-size: 48px;
+    text-transform: capitalize;
+    line-height: 1.2;
+    margin: 0 0 30px 0;
+}
+.start h1 span { color: red; }
+
+.contact-info-block {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.info-group h3 {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #888;
+    letter-spacing: 1px;
+}
+.info-group p {
+    margin: 5px 0;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
+/* ---------- Footer & Fine Print ---------- */
+footer {
+    background-color: #162249;
+    color: white;
+    padding: 60px 5% 40px 5%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 40px;
+}
+.about .logo {
+    margin-bottom: 20px;
+    filter: brightness(0) invert(1);
+}
+.about p {
+    color: #abc;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+.social-icons a {
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255,255,255,0.1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+.social-icons a:hover { background-color: red; }
+
+.quick h4 {
+    margin: 0 0 20px 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #8da2bb;
+    letter-spacing: 1px;
+}
+.quick ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.quick a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+.quick a:hover { color: red; }
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.footer-contact p {
+    margin: 0;
+    font-size: 14px;
+    color: #cbd5e1;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.4;
+}
+.footer-contact i {
+    color: #74c0fc;
+    margin-top: 3px;
+}
+
+.bottom {
+    background-color: #111a36;
+    text-align: center;
+    padding: 20px;
+    color: #8da2bb;
+    font-size: 12px;
+}
+.bottom hr {
+    border: 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    margin: 0 0 15px 0;
+}
+.bottom p { margin: 0; }
 
 /* ============================================================
-   RESPONSIVE LAYER — v4 (rewritten from scratch)
-   Strategy:
-     - Global safety: box-sizing, no horizontal overflow, fluid media.
-     - Three breakpoints: <=1200 (small desktop), <=900 (tablet),
-       <=600 (phone), plus <=380 (tiny phones).
-     - Mobile nav is a right-side slide-in drawer driven by the
-       existing #menu checkbox. Backdrop + close (X) + scroll lock.
-     - Fixed-pixel desktop blocks (.f1/.f3/.net/.hand/.leg, timeline
-       cards, footer columns, join section) collapse to fluid stacks.
+   RESPONSIVE OVERHAUL (Media Queries Layer)
    ============================================================ */
 
-/* ---------- 0. Global safety net ---------- */
-*, *::before, *::after { box-sizing: border-box; }
-html, body { max-width: 100%; overflow-x: hidden; }
-img, video { max-width: 100%; height: auto; display: block; }
-
-/* Allow drawer to escape the sticky header */
-.top { overflow: visible; }
-
-/* Hide drawer-only chrome on desktop */
-#menu { display: none; }
-.ham, .nav-close, .nav-close-row, .nav-overlay { display: none; }
-
-/* ---------- 1. Small desktop / large tablet (<=1200px) ---------- */
-@media (max-width: 1200px) {
-    .logo { margin-left: 20px; margin-right: 40px; }
-    .top a { padding: 18px 14px; padding-top: 26px; font-size: 11px; }
-    .leg { width: 100%; max-width: 520px; }
-    .leg h1 { font-size: 56px; }
-    .f1, .f3 { width: 100%; max-width: 380px; height: auto; }
-    .net, .hand { width: 100%; max-width: 320px; padding: 32px; }
-    .line { width: 85%; }
-    .about, .quick, .contact { min-width: 280px; }
-    .quick { margin-left: 40px; }
-    .about { padding-right: 40px; }
-    .about p { margin-right: 0; }
+@media (max-width: 1024px) {
+    .img { grid-template-columns: 1fr; }
+    .main2 { grid-template-columns: 1fr; gap: 40px; }
+    footer { grid-template-columns: 1fr 1fr; }
 }
 
-/* ============================================================
-   2. TABLET + MOBILE  (<=900px)
-   This is where the layout fundamentally changes: drawer nav,
-   single-column stacks, animations off.
-   ============================================================ */
-@media (max-width: 900px) {
-
-    /* ---- Header ---- */
-    .top {
-        height: auto;
-        padding: 10px 18px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-    }
-    .logo { margin: 0; height: 42px; width: auto; }
-    .logo-link { padding: 0 !important; display: inline-flex; align-items: center; }
-
-    /* Hamburger */
-    .ham {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 44px;
-        height: 44px;
-        font-size: 26px;
-        color: #e32626;
-        cursor: pointer;
-        z-index: 10002;
-    }
-
-    /* Backdrop */
-    .nav-overlay {
-        display: block;
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0);
-        z-index: 9998;
-        pointer-events: none;
-        transition: background 0.3s ease;
-    }
-    .top #menu:checked ~ .nav-overlay {
-        background: rgba(0, 0, 0, 0.55);
-        pointer-events: auto;
-    }
-
-    /* Drawer panel */
+@media (max-width: 768px) {
     .top .nav {
         position: fixed;
         top: 0;
         right: 0;
         height: 100vh;
-        width: min(82%, 320px);
-        background: #ffffff;
-        z-index: 10000;
-        margin: 0;
-        padding: 16px 0;
-        display: flex;
+        width: 280px;
+        background: white;
+        z-index: 2000;
         flex-direction: column;
-        align-items: stretch;
+        align-items: flex-start;
         gap: 0;
+        padding: 20px 0;
         transform: translateX(100%);
-        transition: transform 0.35s ease;
-        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.25);
-        overflow-y: auto;
+        transition: transform 0.3s ease-in-out;
+        box-shadow: -5px 0 25px rgba(0,0,0,0.15);
     }
-    .top #menu:checked ~ .nav { transform: translateX(0); }
-
-    /* Close (X) row */
+    .top li { width: 100%; }
+    .top a {
+        padding: 16px 25px;
+        border-bottom: 1px solid #f5f5f5;
+        font-size: 14px;
+    }
+    .ham {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 10px;
+    }
     .nav-close-row {
         display: flex;
+        width: 100%;
         justify-content: flex-end;
-        padding: 0 14px 10px;
+        padding: 0 20px 15px 20px;
         border-bottom: 1px solid #eee;
     }
     .nav-close {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
         font-size: 24px;
-        color: #e32626;
         cursor: pointer;
+        color: red;
     }
+    .nav-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0,0,0,0.5);
+        z-index: 1500;
+    }
+    
+    #menu:checked ~ .nav { transform: translateX(0); }
+    #menu:checked ~ .nav-overlay { display: block; }
 
-    /* Drawer links */
-    .top .nav li {
-        float: none;
-        width: 100%;
-        list-style: none;
-        border-bottom: 1px solid #f2f2f2;
-    }
-    .top .nav li:last-child { border-bottom: none; }
-    .top .nav a {
-        display: block;
-        width: 100%;
-        padding: 16px 22px;
-        height: auto;
-        color: #111;
-        font-size: 14px;
-        letter-spacing: 0.6px;
-        text-align: left;
-    }
-    .top .nav a:hover { background: #fff5f5; color: #e32626; }
-
-    /* Lock scroll while open */
-    body:has(#menu:checked) { overflow: hidden; }
-
-    /* ---- HERO ---- */
-    #home { height: auto; min-height: 55vh; padding: 70px 18px; }
-
-    /* ---- OVERVIEW (#section1) ---- */
-    #section1 {
-        display: block;
-        width: 100%;
-        margin: 0 auto 30px;
-        padding: 0 18px;
-    }
-    #section1 .img {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 18px;
-        width: 100%;
-        max-width: 100%;
-    }
-    .net, .hand {
-        width: 100%; max-width: 440px;
-        padding: 28px; margin: 0;
-        font-size: 17px;
-    }
-    .f1, .f3 {
-        width: 100%; max-width: 440px;
-        height: auto; margin: 0;
-        grid-row: auto; grid-column: auto;
-    }
-    .leg {
-        width: 100%; max-width: 640px; height: auto;
-        margin: 24px auto 0; padding: 0 4px;
-        text-align: center;
-    }
-    .leg h1 { font-size: 40px; line-height: 1.1; }
-    .leg p  { font-size: 16px; }
-
-    /* ---- CURRICULUM (#section2) ---- */
-    .first { width: 100%; max-width: 600px; padding: 0 18px; margin: 0 auto; }
-    .year  { font-size: 36px; }
-    .line {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 18px;
-        padding: 18px;
-    }
-    .itf, .mid, .nab, .grad, .party {
-        width: 100%; max-width: 340px;
-        position: static; bottom: auto;
-        animation: none;
-        grid-column: auto; grid-row: auto;
-    }
-    .itf .date, .mid .date, .nab .date, .grad .date, .party .date {
-        left: auto; width: 60%; margin: 0 auto;
-    }
-    .time { display: none; }
-
-    /* ---- Stub sections ---- */
-    #section3, #section4, #section5 {
-        height: auto; min-height: 280px; padding: 60px 18px;
-    }
-
-    /* ---- WHY DOXA ---- */
-    #why { padding: 30px 16px; }
-    .why { font-size: 40px; }
-    .cards { padding: 20px 8px; gap: 18px; }
-    .card  { padding: 32px 18px 18px; }
-
-    /* ---- JOIN ---- */
-    .main2 {
-        flex-direction: column;
-        padding: 30px 18px;
-        gap: 28px;
-    }
-    .join-img, .start { min-width: 0; width: 100%; }
-    .join, .fut {
-        padding: 32px 20px;
-        font-size: 18px;
-        border-radius: 16px;
-    }
-    .fut { margin-top: -30px; }
-    .start h1 { font-size: 36px; line-height: 1.1; }
-
-    /* ---- FOOTER ---- */
-    footer {
-        flex-direction: column;
-        padding: 30px 22px;
-        gap: 28px;
-    }
-    .about, .quick, .contact {
-        flex: 1 1 100%;
-        min-width: 0;
-        max-width: 100%;
-        margin: 0;
-        padding: 0;
-    }
-    .about p { margin-right: 0; font-size: 15px; }
-    .quick ul { max-width: 100%; }
-    .contact p { font-size: 14px; word-break: break-word; }
-    .bottom { padding: 14px 18px; text-align: center; }
-    .bottom p { font-size: 12px; margin: 0; }
+    .timeline-container::before { left: 20px; }
+    .timeline-card { width: 100%; left: 0 !important; margin-left: 0; padding-left: 20px; }
+    .timeline-card.right { left: 0; }
+    
+    .leg h1 { font-size: 42px; }
+    footer { grid-template-columns: 1fr; gap: 30px; }
 }
 
-/* ============================================================
-   3. PHONE (<=600px)
-   ============================================================ */
-@media (max-width: 600px) {
-    .top { padding: 8px 14px; }
-    .logo { height: 36px; }
-
-    #home { padding: 56px 14px; min-height: 48vh; }
-    #home h1 { font-size: 30px; }
-
-    .leg h1 { font-size: 30px; }
-    .leg p  { font-size: 14px; }
-    .leg { padding: 0; }
-
-    .year  { font-size: 28px; }
-    .first p { font-size: 14px; }
-
-    .why { font-size: 30px; }
-    .card { max-width: 100%; }
-    .card h4 { font-size: 17px; }
-    .card p  { font-size: 14px; }
-
-    .join, .fut { padding: 26px 16px; font-size: 16px; }
-    .start h1 { font-size: 30px; }
-    .start    { font-size: 16px; }
-
-    .net, .hand { padding: 22px; font-size: 15px; }
-}
-
-/* ============================================================
-   4. TINY PHONES (<=380px)
-   ============================================================ */
-@media (max-width: 380px) {
-    .top .nav { width: 90%; }
-    .logo { height: 32px; }
-    #home h1 { font-size: 26px; }
-    .leg h1  { font-size: 26px; }
-    .year    { font-size: 24px; }
-    .why     { font-size: 26px; }
-    .start h1{ font-size: 26px; }
+@media (max-width: 480px) {
+    .leg h1 { font-size: 32px; }
+    .year { font-size: 34px; }
+    .why { font-size: 36px; }
+    .start h1 { font-size: 34px; }
+    .overview-gallery { grid-template-columns: 1fr; }
 }
