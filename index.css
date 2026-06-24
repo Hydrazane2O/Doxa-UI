@@ -858,6 +858,7 @@ header.top { height: 3.125vw; padding: 0 0.8vw; }
         line-height: 1.6; }
 
     /* Section 2 Sizing Downscales */
+   .first p, li{font-size: 2.95vw;}
     .year { font-size: 3.24vw; }
     .line { padding: 1.04vw 0; width: 100%;  }
     .itf, .nab, .party { padding-top: 2.625vw; margin-bottom: 1.04vw; border-radius: 0.52vw
