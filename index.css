@@ -99,82 +99,116 @@ header.top {
 }
 #section1 .img {
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 50px;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 60px;
     align-items: center;
     width: 100%;
 }
+
+/* UNIFIED STAGGERED IMAGE GRID SETTING */
 .grid-left-gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 30px; /* Enhanced internal rows spacing */
-    width: 100%;
-}
-.gallery-row-1, .gallery-row-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 30px; /* Enhanced cross gaps to eliminate overlapping */
-    align-items: center;
-}
-.f1, .f3 {
+    column-gap: 24px;
+    row-gap: 24px;
     width: 100%;
-    height: 380px;
-    border-radius: 20px;
-    object-fit: cover;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    align-items: start;
 }
-.net, .hand {
+.f3 {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    height: 320px;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+.net {
+    grid-column: 2;
+    grid-row: 1;
+    background-color: #0e1726; 
     color: white;
-    border-radius: 20px;
-    padding: 40px 30px;
-    font-size: 15px;
-    line-height: 1.6;
-    height: 380px;
+    border-radius: 16px;
+    padding: 30px 24px;
+    height: 220px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    justify-content: flex-start;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    margin-top: 50px; 
 }
-.net { background-color: black; }
-.hand { background-color: rgb(255, 0, 0); }
+.hand {
+    grid-column: 1;
+    grid-row: 2;
+    background-color: #d32f2f; 
+    color: white;
+    border-radius: 16px;
+    padding: 30px 24px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    margin-top: -50px; 
+}
+.f1 {
+    grid-column: 2;
+    grid-row: 2;
+    width: 100%;
+    height: 320px;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
 
 .net h4, .hand h4 {
-    margin: 0 0 12px 0;
-    font-size: 22px;
+    margin: 0 0 10px 0;
+    font-size: 20px;
     font-weight: 700;
 }
+.net p, .hand p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+}
+
 .leg {
-    text-transform: capitalize;
-    font-family: "Sanchez", sans-serif;
+    text-transform: none;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .leg h1 {
-    font-size: 64px;
+    font-family: "Sanchez", sans-serif;
+    font-size: 52px;
     margin: 0 0 20px 0;
     line-height: 1.1;
+    color: #222;
 }
-.leg h1 span { color: red; }
+.leg h1 span { color: #c62828; }
 .leg p {
-    font-size: 17px;
+    font-size: 15px;
     line-height: 1.6;
-    color: #333;
-    margin: 0 0 15px 0;
+    color: #555;
+    margin: 0 0 20px 0;
 }
 .leg-meta {
     margin-top: 35px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    display: flex;
+    gap: 40px;
 }
 .meta-item {
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
+    color: #111;
 }
 .meta-item span {
     display: block;
-    font-size: 14px;
-    color: gray;
+    font-size: 12px;
+    color: #777;
     font-weight: normal;
-    margin-top: 5px;
+    text-transform: uppercase;
+    margin-top: 4px;
+    letter-spacing: 0.5px;
 }
 
 /* ---------- Section 2: Sliding Timeline System ---------- */
@@ -239,26 +273,24 @@ header.top {
     z-index: 5;
     margin-bottom: 40px;
     border: 2px solid transparent;
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Sliding Horizontal Track Position System */
 .itf, .nab, .party {
     left: 0;
-    animation: slideFromLeft 5s infinite ease-in-out;
+    animation: slideFromLeft 6s infinite ease-in-out;
 }
 .mid, .grad {
     left: 56%;
-    animation: slideFromRight 5s infinite ease-in-out;
+    animation: slideFromRight 6s infinite ease-in-out;
 }
 
 @keyframes slideFromLeft {
     0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(15px); }
+    50% { transform: translateX(12px); }
 }
 @keyframes slideFromRight {
     0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(-15px); }
+    50% { transform: translateX(-12px); }
 }
 
 .itf .date, .mid .date, .nab .date, .grad .date, .party .date {
@@ -291,7 +323,7 @@ header.top {
 }
 
 /* ---------- Basic Theme Sections ---------- */
-#section3, #section4, #section5 {
+#section3, #section4 {
     padding: 100px 20px;
     text-align: center;
     color: white;
@@ -299,7 +331,167 @@ header.top {
 }
 #section3 { background-color: #2e7d32; }
 #section4 { background-color: #c62828; }
-#section5 { background-color: #4a148c; }
+
+/* ---------- Section 5: Fees & Funding Block (Image: 1001905598.jpg) ---------- */
+#section5 {
+    padding: 90px 4%;
+    background-color: #fcfcfc;
+    font-family: 'Inter', sans-serif;
+}
+.fees-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px auto;
+}
+.fees-header ul {
+    list-style: none;
+    padding: 8px 18px;
+    background-color: rgba(198, 40, 40, 0.08);
+    border-radius: 40px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+.fees-header li {
+    color: #c62828;
+    font-weight: bold;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+.fees-header h2 {
+    font-family: "Sanchez", sans-serif;
+    font-size: 46px;
+    margin: 10px 0;
+    color: #111;
+}
+.fees-header h2 span { color: #c62828; }
+.fees-header p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.fees-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+.fee-card {
+    background-color: white;
+    border: 2px solid #eaeaea;
+    border-radius: 20px;
+    padding: 40px 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.fee-badge {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background-color: #f1f1f1;
+    color: #555;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 30px;
+    text-transform: uppercase;
+}
+.fee-badge.premium {
+    background-color: rgba(198, 40, 40, 0.1);
+    color: #c62828;
+}
+.fee-card h3 {
+    font-size: 22px;
+    margin: 10px 0 15px 0;
+    color: #111;
+    font-weight: 800;
+}
+.fee-desc {
+    font-size: 13.5px;
+    color: #666;
+    line-height: 1.5;
+    margin: 0 0 25px 0;
+    min-height: 60px;
+}
+.price-box {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 25px;
+}
+.price-box .currency {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111;
+    vertical-align: top;
+    position: relative;
+    top: 4px;
+}
+.price-box .amount {
+    font-size: 42px;
+    font-weight: 800;
+    color: #111;
+    letter-spacing: -1px;
+}
+.price-box .duration {
+    font-size: 13px;
+    color: #888;
+    margin-left: 4px;
+}
+
+.fee-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 35px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex-grow: 1;
+}
+.fee-features li {
+    font-size: 14px;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.fee-features i {
+    color: #2e7d32;
+    font-size: 15px;
+}
+
+.fee-btn {
+    text-align: center;
+    display: block;
+    padding: 14px;
+    background-color: #f4f4f4;
+    color: #222;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 12px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.fee-btn:hover {
+    background-color: #e0e0e0;
+}
+.fee-btn.accent {
+    background-color: #c62828;
+    color: white;
+}
+.fee-btn.accent:hover {
+    background-color: #b31b1b;
+}
+
+/* RE-ENGINEERED PRE-SET HOVER FOR THE TARGET STANDARD TRACK CARD */
+.fee-card.standard:hover, .fee-card:hover {
+    border-color: red !important;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(198, 40, 40, 0.06);
+}
 
 /* ---------- Why Doxa Section ---------- */
 #why {
@@ -329,13 +521,12 @@ header.top {
     padding: 40px 25px;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.2s ease, box-shadow 0.3s ease;
 }
-
-/* Restored Red Outline Hover Parameter Rule */
 .card:hover {
     border-color: red !important;
     transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 0, 0, 0.08);
 }
 .card i {
     width: 60px;
@@ -472,7 +663,6 @@ footer {
    ============================================================ */
 
 @media (max-width: 768px) {
-    /* --- Activate Drawer Menu Mechanisms Only on Mobile viewports --- */
     header.top { 
         height: 60px; 
         padding: 0 15px;
@@ -537,21 +727,25 @@ footer {
         font-size: 13px;
     }
 
-    /* --- Side-By-Side Mobile Scaling Engine --- */
+    /* --- Scaled 2-Column Responsive Stagger System --- */
     #section1 { margin: 40px auto; }
-    #section1 .img { grid-template-columns: 1.1fr 0.9fr; gap: 15px; }
-    .grid-left-gallery { gap: 15px; }
-    .gallery-row-1, .gallery-row-2 { gap: 15px; }
+    #section1 .img { grid-template-columns: 1fr; gap: 40px; }
     
-    .f1, .f3 { height: 160px; border-radius: 10px; }
-    .net, .hand { height: 160px; padding: 15px 10px; font-size: 10px; border-radius: 10px; }
+    .grid-left-gallery { column-gap: 12px; row-gap: 12px; }
+    .f3 { height: 160px; border-radius: 8px; }
+    .f1 { height: 160px; border-radius: 8px; }
+    
+    .net { height: 120px; padding: 14px 12px; border-radius: 8px; margin-top: 25px; }
+    .hand { height: 120px; padding: 14px 12px; border-radius: 8px; margin-top: -25px; }
+    
     .net h4, .hand h4 { font-size: 12px; margin-bottom: 4px; }
+    .net p, .hand p { font-size: 9.5px; line-height: 1.4; }
     
-    .leg h1 { font-size: 24px; margin-bottom: 8px; }
-    .leg p { font-size: 11px; line-height: 1.4; margin-bottom: 8px; }
-    .leg-meta { margin-top: 15px; gap: 10px; }
-    .meta-item { font-size: 11px; }
-    .meta-item span { font-size: 9px; }
+    .leg h1 { font-size: 32px; margin-bottom: 12px; }
+    .leg p { font-size: 13px; line-height: 1.5; margin-bottom: 12px; }
+    .leg-meta { margin-top: 20px; gap: 20px; }
+    .meta-item { font-size: 13px; }
+    .meta-item span { font-size: 10px; }
 
     /* --- Calendar Components Animation Trackers --- */
     .year { font-size: 26px; }
@@ -564,6 +758,14 @@ footer {
     .itf h6, .mid h6, .nab h6, .grad h6, .party h6 { font-size: 12px; margin-bottom: 4px; }
     .bot { font-size: 9.5px; line-height: 1.3; }
     .itf .date, .mid .date, .nab .date, .grad .date, .party .date { font-size: 8px; padding: 2px 6px; margin-bottom: 6px; }
+
+    /* --- Mobile Tuition Layout Stack --- */
+    #section5 { padding: 50px 15px; }
+    .fees-header h2 { font-size: 28px; }
+    .fees-header p { font-size: 13px; }
+    .fees-container { grid-template-columns: 1fr; gap: 25px; }
+    .fee-card { padding: 30px 20px; }
+    .price-box .amount { font-size: 34px; }
 
     /* --- Card Outlines Matrix --- */
     .why { font-size: 28px; margin-bottom: 20px; }
@@ -583,7 +785,7 @@ footer {
     .us h3, .add h3, .mail h3 { font-size: 9px; margin-bottom: 2px; }
     .us p, .add p, .mail p { font-size: 11px; }
 
-    /* --- Footers Side-By-Side Columns Matrix --- */
+    /* --- Footers Columns Matrix --- */
     footer { 
         grid-template-columns: repeat(3, 1fr); 
         gap: 15px; 
@@ -594,20 +796,16 @@ footer {
 }
 
 @media (max-width: 480px) {
-    #section1 .img { gap: 10px; }
-    .gallery-row-1, .gallery-row-2 { gap: 10px; }
-    .f1, .f3 { height: 125px; }
-    .net, .hand { height: 125px; font-size: 8.5px; padding: 10px 6px; }
+    .grid-left-gallery { column-gap: 8px; row-gap: 8px; }
+    .f3, .f1 { height: 115px; }
+    .net, .hand { height: 95px; padding: 10px 8px; }
     .net h4, .hand h4 { font-size: 10px; }
-    .leg h1 { font-size: 18px; }
-    .leg p { font-size: 9.5px; }
+    .net p, .hand p { font-size: 8px; }
+    .net { margin-top: 15px; }
+    .hand { margin-top: -15px; }
     
-    .itf h6, .mid h6, .nab h6, .grad h6, .party h6 { font-size: 10px; }
-    .bot { font-size: 8px; }
+    .leg h1 { font-size: 24px; }
+    .leg p { font-size: 11px; }
     
     .cards { grid-template-columns: repeat(2, 1fr); }
-    
-    .jf1, .jf2 { height: 85px; }
-    .start h1 { font-size: 16px; }
-    }
-    
+        }
