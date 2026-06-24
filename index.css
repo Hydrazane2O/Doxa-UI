@@ -556,9 +556,6 @@ header.top {
     height: 24.6vw; 
     border-radius: 1.04vw 
 }
-.jf1{
-    margin-top: -18.7vw;
-}
 .start { 
     font-family: "Sanchez", sans-serif; 
 }
@@ -671,7 +668,7 @@ footer {
     .leg p { font-size: 0.72vw; line-height: 1.6; }
 
     /* Section 2 Sizing Downscales */
-    .year { font-size: 1.24vw; }
+    .year { font-size: 3.24vw; }
     .line { padding: 1.04vw 0; }
     .itf, .mid, .nab, .grad, .party { padding: 0.625vw; margin-bottom: 1.04vw; border-radius: 0.52vw
 ; width: 44%; }
