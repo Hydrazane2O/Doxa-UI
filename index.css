@@ -691,47 +691,66 @@ span{
     margin-bottom: 15px;
 }
 
+
 /* ============================================================
-   RESPONSIVE OVERHAUL (v3)
-   - Prevents horizontal overflow on all sizes
-   - Reflows fixed-pixel desktop layouts on tablet/phone
-   - Replaces the old checkbox nav with a real slide-in drawer
-     featuring an overlay scrim and an in-drawer close (X) button.
-   The drawer is pure CSS (checkbox hack) — no JS required.
+   RESPONSIVE LAYER — v4 (rewritten from scratch)
+   Strategy:
+     - Global safety: box-sizing, no horizontal overflow, fluid media.
+     - Three breakpoints: <=1200 (small desktop), <=900 (tablet),
+       <=600 (phone), plus <=380 (tiny phones).
+     - Mobile nav is a right-side slide-in drawer driven by the
+       existing #menu checkbox. Backdrop + close (X) + scroll lock.
+     - Fixed-pixel desktop blocks (.f1/.f3/.net/.hand/.leg, timeline
+       cards, footer columns, join section) collapse to fluid stacks.
    ============================================================ */
 
+/* ---------- 0. Global safety net ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 html, body { max-width: 100%; overflow-x: hidden; }
-img { max-width: 100%; height: auto; display: block; }
+img, video { max-width: 100%; height: auto; display: block; }
 
-/* Header polish (all sizes) */
-.top {
-    padding: 10px 20px;
-    gap: 12px;
-    justify-content: space-between;
-    overflow: visible; /* override original 'overflow:hidden' so drawer can slide out */
-}
-.top .logo { margin: 0; height: 50px; width: auto; }
-.logo-link { display: inline-flex; align-items: center; padding: 0 !important; }
+/* Allow drawer to escape the sticky header */
+.top { overflow: visible; }
 
-/* Hide the checkbox itself + the drawer-only controls on desktop */
+/* Hide drawer-only chrome on desktop */
 #menu { display: none; }
 .ham, .nav-close, .nav-close-row, .nav-overlay { display: none; }
 
-/* HERO */
-#home { height: auto; min-height: 60vh; padding: 80px 20px; }
+/* ---------- 1. Small desktop / large tablet (<=1200px) ---------- */
+@media (max-width: 1200px) {
+    .logo { margin-left: 20px; margin-right: 40px; }
+    .top a { padding: 18px 14px; padding-top: 26px; font-size: 11px; }
+    .leg { width: 100%; max-width: 520px; }
+    .leg h1 { font-size: 56px; }
+    .f1, .f3 { width: 100%; max-width: 380px; height: auto; }
+    .net, .hand { width: 100%; max-width: 320px; padding: 32px; }
+    .line { width: 85%; }
+    .about, .quick, .contact { min-width: 280px; }
+    .quick { margin-left: 40px; }
+    .about { padding-right: 40px; }
+    .about p { margin-right: 0; }
+}
 
-/* ============ Tablet + mobile (<=1024px) ============ */
-@media (max-width: 1024px) {
+/* ============================================================
+   2. TABLET + MOBILE  (<=900px)
+   This is where the layout fundamentally changes: drawer nav,
+   single-column stacks, animations off.
+   ============================================================ */
+@media (max-width: 900px) {
 
-    /* ---------- DRAWER NAV ---------- */
+    /* ---- Header ---- */
     .top {
-        flex-wrap: nowrap;
-        padding: 10px 16px;
+        height: auto;
+        padding: 10px 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
     }
-    .top .logo { height: 42px; }
+    .logo { margin: 0; height: 42px; width: auto; }
+    .logo-link { padding: 0 !important; display: inline-flex; align-items: center; }
 
-    /* Hamburger button (visible on mobile) */
+    /* Hamburger */
     .ham {
         display: inline-flex;
         align-items: center;
@@ -742,11 +761,9 @@ img { max-width: 100%; height: auto; display: block; }
         color: #e32626;
         cursor: pointer;
         z-index: 10002;
-        background: transparent;
-        border: none;
     }
 
-    /* Backdrop scrim */
+    /* Backdrop */
     .nav-overlay {
         display: block;
         position: fixed;
@@ -756,13 +773,13 @@ img { max-width: 100%; height: auto; display: block; }
         pointer-events: none;
         transition: background 0.3s ease;
     }
+    .top #menu:checked ~ .nav-overlay {
+        background: rgba(0, 0, 0, 0.55);
+        pointer-events: auto;
+    }
 
-    /* The drawer panel */
+    /* Drawer panel */
     .top .nav {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
         position: fixed;
         top: 0;
         right: 0;
@@ -771,25 +788,23 @@ img { max-width: 100%; height: auto; display: block; }
         background: #ffffff;
         z-index: 10000;
         margin: 0;
-        padding: 20px 0;
+        padding: 16px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
         transform: translateX(100%);
         transition: transform 0.35s ease;
-        box-shadow: -8px 0 30px rgba(0, 0, 0, 0.25);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.25);
         overflow-y: auto;
     }
-
-    /* Open state */
     .top #menu:checked ~ .nav { transform: translateX(0); }
-    .top #menu:checked ~ .nav-overlay {
-        background: rgba(0, 0, 0, 0.5);
-        pointer-events: auto;
-    }
 
-    /* Drawer close button (X) */
+    /* Close (X) row */
     .nav-close-row {
         display: flex;
         justify-content: flex-end;
-        padding: 0 16px 12px;
+        padding: 0 14px 10px;
         border-bottom: 1px solid #eee;
     }
     .nav-close {
@@ -807,7 +822,6 @@ img { max-width: 100%; height: auto; display: block; }
     .top .nav li {
         float: none;
         width: 100%;
-        text-align: left;
         list-style: none;
         border-bottom: 1px solid #f2f2f2;
     }
@@ -815,85 +829,160 @@ img { max-width: 100%; height: auto; display: block; }
     .top .nav a {
         display: block;
         width: 100%;
-        padding: 16px 24px;
+        padding: 16px 22px;
         height: auto;
         color: #111;
         font-size: 14px;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.6px;
+        text-align: left;
     }
     .top .nav a:hover { background: #fff5f5; color: #e32626; }
 
-    /* Lock body scroll when drawer open */
+    /* Lock scroll while open */
     body:has(#menu:checked) { overflow: hidden; }
 
-    /* ---------- LAYOUT REFLOW ---------- */
-    #section1 { display: block; width: 92%; margin: 0 auto 40px; }
+    /* ---- HERO ---- */
+    #home { height: auto; min-height: 55vh; padding: 70px 18px; }
+
+    /* ---- OVERVIEW (#section1) ---- */
+    #section1 {
+        display: block;
+        width: 100%;
+        margin: 0 auto 30px;
+        padding: 0 18px;
+    }
     #section1 .img {
-        display: flex; flex-direction: column; align-items: center;
-        gap: 20px; width: 100%; max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        width: 100%;
+        max-width: 100%;
     }
     .net, .hand {
-        width: 100%; max-width: 420px; padding: 30px; margin: 0;
+        width: 100%; max-width: 440px;
+        padding: 28px; margin: 0;
+        font-size: 17px;
     }
     .f1, .f3 {
-        width: 100%; max-width: 420px; height: auto; margin: 0;
+        width: 100%; max-width: 440px;
+        height: auto; margin: 0;
         grid-row: auto; grid-column: auto;
     }
     .leg {
-        width: 100%; max-width: 600px; height: auto;
-        margin: 30px auto 0; padding: 0 10px; text-align: center;
+        width: 100%; max-width: 640px; height: auto;
+        margin: 24px auto 0; padding: 0 4px;
+        text-align: center;
     }
-    .leg h1 { font-size: 44px; }
-    .leg p  { font-size: 17px; }
+    .leg h1 { font-size: 40px; line-height: 1.1; }
+    .leg p  { font-size: 16px; }
 
-    .first { width: 100%; max-width: 600px; padding: 0 20px; }
-    .year  { font-size: 40px; }
+    /* ---- CURRICULUM (#section2) ---- */
+    .first { width: 100%; max-width: 600px; padding: 0 18px; margin: 0 auto; }
+    .year  { font-size: 36px; }
     .line {
-        width: 100%; display: flex; flex-direction: column;
-        align-items: center; gap: 20px; padding: 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        padding: 18px;
     }
     .itf, .mid, .nab, .grad, .party {
-        width: 100%; max-width: 320px; position: static; bottom: auto;
-        animation: none; grid-column: auto; grid-row: auto;
+        width: 100%; max-width: 340px;
+        position: static; bottom: auto;
+        animation: none;
+        grid-column: auto; grid-row: auto;
+    }
+    .itf .date, .mid .date, .nab .date, .grad .date, .party .date {
+        left: auto; width: 60%; margin: 0 auto;
     }
     .time { display: none; }
 
-    #section3, #section4, #section5 { height: 320px; }
-
-    .why { font-size: 44px; }
-    .cards { padding: 20px 16px; gap: 20px; }
-
-    .main2 { padding: 30px 16px; }
-    .join, .fut { padding: 30px; font-size: 18px; }
-    .fut { margin-top: -40px; }
-
-    footer { padding: 30px 20px; gap: 30px; flex-direction: column; }
-    .about, .quick, .contact {
-        flex: 1 1 100%; min-width: 0; max-width: 100%; margin: 0; padding: 0;
+    /* ---- Stub sections ---- */
+    #section3, #section4, #section5 {
+        height: auto; min-height: 280px; padding: 60px 18px;
     }
-    .about p { margin-right: 0; font-size: 16px; }
-    .quick { max-width: 100%; }
-    .contact { margin-top: 0; }
+
+    /* ---- WHY DOXA ---- */
+    #why { padding: 30px 16px; }
+    .why { font-size: 40px; }
+    .cards { padding: 20px 8px; gap: 18px; }
+    .card  { padding: 32px 18px 18px; }
+
+    /* ---- JOIN ---- */
+    .main2 {
+        flex-direction: column;
+        padding: 30px 18px;
+        gap: 28px;
+    }
+    .join-img, .start { min-width: 0; width: 100%; }
+    .join, .fut {
+        padding: 32px 20px;
+        font-size: 18px;
+        border-radius: 16px;
+    }
+    .fut { margin-top: -30px; }
+    .start h1 { font-size: 36px; line-height: 1.1; }
+
+    /* ---- FOOTER ---- */
+    footer {
+        flex-direction: column;
+        padding: 30px 22px;
+        gap: 28px;
+    }
+    .about, .quick, .contact {
+        flex: 1 1 100%;
+        min-width: 0;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .about p { margin-right: 0; font-size: 15px; }
+    .quick ul { max-width: 100%; }
     .contact p { font-size: 14px; word-break: break-word; }
-    .bottom { padding: 16px 20px; text-align: center; }
+    .bottom { padding: 14px 18px; text-align: center; }
+    .bottom p { font-size: 12px; margin: 0; }
 }
 
-/* ============ Phone (<=640px) ============ */
-@media (max-width: 640px) {
+/* ============================================================
+   3. PHONE (<=600px)
+   ============================================================ */
+@media (max-width: 600px) {
     .top { padding: 8px 14px; }
-    .top .logo { height: 38px; }
-    #home { padding: 60px 16px; min-height: 50vh; }
-    #home h1 { font-size: 32px; }
+    .logo { height: 36px; }
 
-    .leg h1 { font-size: 32px; }
-    .leg p  { font-size: 15px; }
-    .year   { font-size: 30px; }
-    .why    { font-size: 32px; }
+    #home { padding: 56px 14px; min-height: 48vh; }
+    #home h1 { font-size: 30px; }
 
-    .card { max-width: 100%; padding: 30px 16px 16px; }
-    .main2 h1 { font-size: 28px; }
-    .start { font-size: 17px; }
+    .leg h1 { font-size: 30px; }
+    .leg p  { font-size: 14px; }
+    .leg { padding: 0; }
 
-    .top .nav { width: 86%; }
+    .year  { font-size: 28px; }
+    .first p { font-size: 14px; }
+
+    .why { font-size: 30px; }
+    .card { max-width: 100%; }
+    .card h4 { font-size: 17px; }
+    .card p  { font-size: 14px; }
+
+    .join, .fut { padding: 26px 16px; font-size: 16px; }
+    .start h1 { font-size: 30px; }
+    .start    { font-size: 16px; }
+
+    .net, .hand { padding: 22px; font-size: 15px; }
 }
 
+/* ============================================================
+   4. TINY PHONES (<=380px)
+   ============================================================ */
+@media (max-width: 380px) {
+    .top .nav { width: 90%; }
+    .logo { height: 32px; }
+    #home h1 { font-size: 26px; }
+    .leg h1  { font-size: 26px; }
+    .year    { font-size: 24px; }
+    .why     { font-size: 26px; }
+    .start h1{ font-size: 26px; }
+}
