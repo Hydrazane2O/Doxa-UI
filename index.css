@@ -91,7 +91,9 @@ header.top {
     letter-spacing: 2px;
 }
 
-/* ---------- Section 1: Overview Twin Layout ---------- */
+/* ============================================================
+   FIXED ASYMMETRIC FLUID GRID SYSTEM (Matches 1001905612.jpg)
+   ============================================================ */
 #section1 {
     width: 92%;
     max-width: 1300px;
@@ -104,62 +106,34 @@ header.top {
     align-items: center;
     width: 100%;
 }
-
-/* UNIFIED STAGGERED IMAGE GRID SETTING */
 .grid-left-gallery {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 24px;
-    row-gap: 24px;
+    column-gap: 20px;
+    row-gap: 20px;
     width: 100%;
-    align-items: start;
+    align-items: stretch; /* Prevents overlap breaking, matches cards perfectly */
 }
-.f3 {
-    grid-column: 1;
-    grid-row: 1;
+.f3, .f1, .net, .hand {
     width: 100%;
-    height: 320px;
     border-radius: 16px;
+    margin: 0 !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+.f3, .f1 {
     object-fit: cover;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    height: 100%;
+    min-height: 250px;
 }
-.net {
-    grid-column: 2;
-    grid-row: 1;
-    background-color: #0e1726; 
-    color: white;
-    border-radius: 16px;
+.net, .hand {
     padding: 30px 24px;
-    height: 220px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    margin-top: 50px; 
+    justify-content: center;
+    min-height: 210px;
 }
-.hand {
-    grid-column: 1;
-    grid-row: 2;
-    background-color: #d32f2f; 
-    color: white;
-    border-radius: 16px;
-    padding: 30px 24px;
-    height: 220px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    margin-top: -50px; 
-}
-.f1 {
-    grid-column: 2;
-    grid-row: 2;
-    width: 100%;
-    height: 320px;
-    border-radius: 16px;
-    object-fit: cover;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-}
+.net { background-color: #0e1726; color: white; }
+.hand { background-color: #d32f2f; color: white; }
 
 .net h4, .hand h4 {
     margin: 0 0 10px 0;
@@ -210,6 +184,12 @@ header.top {
     margin-top: 4px;
     letter-spacing: 0.5px;
 }
+
+/* Grid Tracks Placement Slots Mapping */
+.f3   { grid-column: 1; grid-row: 1; }
+.net  { grid-column: 2; grid-row: 1; }
+.hand { grid-column: 1; grid-row: 2; }
+.f1   { grid-column: 2; grid-row: 2; }
 
 /* ---------- Section 2: Sliding Timeline System ---------- */
 #section2 {
@@ -332,16 +312,16 @@ header.top {
 #section3 { background-color: #2e7d32; }
 #section4 { background-color: #c62828; }
 
-/* ---------- Section 5: Fees & Funding Block (Image: 1001905598.jpg) ---------- */
+/* ---------- Section 5: Scaled 2/1 Ratio Fees & Funding Interface ---------- */
 #section5 {
-    padding: 90px 4%;
+    padding: 70px 4%;
     background-color: #fcfcfc;
     font-family: 'Inter', sans-serif;
 }
 .fees-header {
     text-align: center;
-    max-width: 700px;
-    margin: 0 auto 60px auto;
+    max-width: 600px;
+    margin: 0 auto 45px auto;
 }
 .fees-header ul {
     list-style: none;
@@ -359,30 +339,31 @@ header.top {
 }
 .fees-header h2 {
     font-family: "Sanchez", sans-serif;
-    font-size: 46px;
+    font-size: 38px;
     margin: 10px 0;
     color: #111;
 }
 .fees-header h2 span { color: #c62828; }
 .fees-header p {
     color: #666;
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
+/* Reduced width bounds pulls the columns neatly into a slimmer ratio structure */
 .fees-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    max-width: 1200px;
+    gap: 20px;
+    max-width: 960px; 
     margin: 0 auto;
     align-items: stretch;
 }
 .fee-card {
     background-color: white;
     border: 2px solid #eaeaea;
-    border-radius: 20px;
-    padding: 40px 30px;
+    border-radius: 16px;
+    padding: 28px 20px; 
     position: relative;
     display: flex;
     flex-direction: column;
@@ -390,13 +371,13 @@ header.top {
 }
 .fee-badge {
     position: absolute;
-    top: 20px;
-    right: 25px;
+    top: 15px;
+    right: 18px;
     background-color: #f1f1f1;
     color: #555;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 700;
-    padding: 4px 12px;
+    padding: 3px 10px;
     border-radius: 30px;
     text-transform: uppercase;
 }
@@ -405,74 +386,74 @@ header.top {
     color: #c62828;
 }
 .fee-card h3 {
-    font-size: 22px;
-    margin: 10px 0 15px 0;
+    font-size: 18px;
+    margin: 10px 0 12px 0;
     color: #111;
     font-weight: 800;
 }
 .fee-desc {
-    font-size: 13.5px;
+    font-size: 12.5px;
     color: #666;
-    line-height: 1.5;
-    margin: 0 0 25px 0;
-    min-height: 60px;
+    line-height: 1.4;
+    margin: 0 0 20px 0;
+    min-height: 55px;
 }
 .price-box {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     border-bottom: 1px solid #f0f0f0;
-    padding-bottom: 25px;
+    padding-bottom: 20px;
 }
 .price-box .currency {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 700;
     color: #111;
     vertical-align: top;
     position: relative;
-    top: 4px;
+    top: 2px;
 }
 .price-box .amount {
-    font-size: 42px;
+    font-size: 32px;
     font-weight: 800;
     color: #111;
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
 }
 .price-box .duration {
-    font-size: 13px;
+    font-size: 12px;
     color: #888;
-    margin-left: 4px;
+    margin-left: 2px;
 }
 
 .fee-features {
     list-style: none;
     padding: 0;
-    margin: 0 0 35px 0;
+    margin: 0 0 25px 0;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
     flex-grow: 1;
 }
 .fee-features li {
-    font-size: 14px;
+    font-size: 13px;
     color: #444;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 }
 .fee-features i {
     color: #2e7d32;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 .fee-btn {
     text-align: center;
     display: block;
-    padding: 14px;
+    padding: 11px;
     background-color: #f4f4f4;
     color: #222;
     text-decoration: none;
     font-weight: 700;
-    font-size: 14px;
-    border-radius: 12px;
+    font-size: 13px;
+    border-radius: 10px;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 .fee-btn:hover {
@@ -486,11 +467,11 @@ header.top {
     background-color: #b31b1b;
 }
 
-/* RE-ENGINEERED PRE-SET HOVER FOR THE TARGET STANDARD TRACK CARD */
+/* Red Highlight Outline Target Interaction */
 .fee-card.standard:hover, .fee-card:hover {
     border-color: red !important;
     transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(198, 40, 40, 0.06);
+    box-shadow: 0 12px 30px rgba(198, 40, 40, 0.05);
 }
 
 /* ---------- Why Doxa Section ---------- */
@@ -727,22 +708,18 @@ footer {
         font-size: 13px;
     }
 
-    /* --- Scaled 2-Column Responsive Stagger System --- */
-    #section1 { margin: 40px auto; }
-    #section1 .img { grid-template-columns: 1fr; gap: 40px; }
+    /* --- Scaled 2-Column Responsive Stagger System (Fixes 1001905612.jpg Layout) --- */
+    #section1 .img { grid-template-columns: 1fr; gap: 35px; }
     
     .grid-left-gallery { column-gap: 12px; row-gap: 12px; }
-    .f3 { height: 160px; border-radius: 8px; }
-    .f1 { height: 160px; border-radius: 8px; }
+    .f3, .f1 { min-height: 140px; height: 140px; border-radius: 12px; }
+    .net, .hand { min-height: 140px; padding: 16px 14px; border-radius: 12px; justify-content: flex-start; }
     
-    .net { height: 120px; padding: 14px 12px; border-radius: 8px; margin-top: 25px; }
-    .hand { height: 120px; padding: 14px 12px; border-radius: 8px; margin-top: -25px; }
+    .net h4, .hand h4 { font-size: 13px; margin: 0 0 6px 0; font-weight: 700; line-height: 1.2; }
+    .net p, .hand p { font-size: 10px; line-height: 1.4; }
     
-    .net h4, .hand h4 { font-size: 12px; margin-bottom: 4px; }
-    .net p, .hand p { font-size: 9.5px; line-height: 1.4; }
-    
-    .leg h1 { font-size: 32px; margin-bottom: 12px; }
-    .leg p { font-size: 13px; line-height: 1.5; margin-bottom: 12px; }
+    .leg h1 { font-size: 34px; margin-bottom: 12px; }
+    .leg p { font-size: 14px; line-height: 1.6; }
     .leg-meta { margin-top: 20px; gap: 20px; }
     .meta-item { font-size: 13px; }
     .meta-item span { font-size: 10px; }
@@ -763,9 +740,9 @@ footer {
     #section5 { padding: 50px 15px; }
     .fees-header h2 { font-size: 28px; }
     .fees-header p { font-size: 13px; }
-    .fees-container { grid-template-columns: 1fr; gap: 25px; }
-    .fee-card { padding: 30px 20px; }
-    .price-box .amount { font-size: 34px; }
+    .fees-container { grid-template-columns: 1fr; max-width: 400px; gap: 20px; }
+    .fee-card { padding: 24px 18px; }
+    .price-box .amount { font-size: 28px; }
 
     /* --- Card Outlines Matrix --- */
     .why { font-size: 28px; margin-bottom: 20px; }
@@ -796,16 +773,10 @@ footer {
 }
 
 @media (max-width: 480px) {
-    .grid-left-gallery { column-gap: 8px; row-gap: 8px; }
-    .f3, .f1 { height: 115px; }
-    .net, .hand { height: 95px; padding: 10px 8px; }
-    .net h4, .hand h4 { font-size: 10px; }
-    .net p, .hand p { font-size: 8px; }
-    .net { margin-top: 15px; }
-    .hand { margin-top: -15px; }
-    
+    .f3, .f1, .net, .hand { min-height: 155px; height: 155px; }
+    .net p, .hand p { font-size: 9.5px; }
     .leg h1 { font-size: 24px; }
     .leg p { font-size: 11px; }
-    
     .cards { grid-template-columns: repeat(2, 1fr); }
-        }
+    }
+    
