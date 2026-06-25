@@ -598,9 +598,6 @@ footer {
    RESPONSIVE MEDIA SYSTEM (PHONE INTERFACE RESPONSIVENESS)
    ============================================================ */
 @media (max-width: 768px) {
-    body{
-        width: 100%;
-    }
     header.top { 
         height: 56px; 
         padding: 0 16px; 
