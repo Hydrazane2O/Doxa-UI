@@ -747,18 +747,18 @@ footer {
     .line {
         padding: 20px 0;
     }
-    .center-line-track {
-        left: 15px; 
-    }
-    .itf, .mid, .nab, .grad, .party { 
-        width: calc(100% - 30px);
-        left: 30px !important;
+    
+    .itf, .nab, .party { 
+        width: 230px;
+        left: 2% !important;
         margin-left: 0;
         margin-right: 0;
         padding: 14px;
         margin-bottom: 16px;
-        border-radius: 8px;
-        animation: none !important; 
+        border-radius: 8px;; 
+    }
+    .mid, .grad{
+        left: 10% !important;
     }
     .itf .date, .mid .date, .nab .date, .grad .date, .party .date {
         font-size: 0.65rem;
