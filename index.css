@@ -33,7 +33,7 @@ header.top {
     position: sticky;
     top: 0;
     width: 100%;
-    height: 70px; /* Changed from vw to absolute px for cross-device consistency */
+    height: 70px; 
     background-color: rgba(255, 255, 255, 0.95);
     display: flex;
     align-items: center;
@@ -47,7 +47,7 @@ header.top {
     align-items: center;
 }
 .logo {
-    height: 40px; /* Set clean readable height values */
+    height: 40px; 
     width: auto;
 }
 .top .nav {
@@ -68,7 +68,7 @@ header.top {
     color: black;
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 0.85rem; /* Clean readable root scaling units */
+    font-size: 0.85rem; 
     letter-spacing: 0.5px;
     transition: color 0.2s ease;
 }
@@ -101,46 +101,82 @@ header.top {
 }
 
 /* ---------- Overview Section ---------- */
-/* ---------- Section 1: Overview Layout System ---------- */
 #overview {
     width: 92%;
     max-width: 1200px;
     margin: 80px auto;
     display: grid;
-    grid-template-columns: 1fr 1.2fr; /* Separates text content and image grid cleanly */
+    grid-template-columns: 1fr 1.2fr;
     gap: 50px;
     align-items: center;
 }
+.grid-left-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+.f3, .f1, .net, .hand {
+    border-radius: 12px;
+    margin: 0;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+.f3, .f1 {
+    object-fit: cover;
+    height: 240px;
+    width: 100%;
+}
+.net, .hand {
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    min-height: 140px;
+}
+.net { background-color: #0e1726; color: white; }
+.hand { background-color: #d32f2f; color: white; }
 
-/* --- Left Side Typography & Branding Info --- */
+.net h4, .hand h4 {
+    margin: 0 0 8px 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+.net p, .hand p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+}
+
 .leg {
+    text-transform: none;
     font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
 }
 .leg h1 {
     font-family: "Sanchez", sans-serif;
-    font-size: clamp(2.2rem, 3.5vw, 3rem);
+    font-size: 2.5rem;
     margin: 0 0 20px 0;
-    line-height: 1.15;
-    color: #111;
+    line-height: 1.2;
+    color: #222;
 }
-.leg h1 span { 
-    color: #c62828; 
-}
+.leg h1 span { color: #c62828; }
 .leg p {
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 1.6;
     color: #555;
     margin: 0 0 20px 0;
 }
 .leg-meta {
-    margin-top: 30px;
+    margin-top: 24px;
     display: flex;
     gap: 40px;
 }
 .meta-item {
     font-size: 1rem;
     font-weight: bold;
-    color: #c62828; /* Highlights icon data labels */
+    color: #111;
 }
 .meta-item span {
     display: block;
@@ -152,58 +188,10 @@ header.top {
     letter-spacing: 0.5px;
 }
 
-/* --- Right Side: Staggered Matrix Grid Layout --- */
-.grid-left-gallery {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Equal split layout matches visual file */
-    gap: 20px;
-    width: 100%;
-}
-
-/* Unified styling for all matrix grid containers */
-.gallery-img, .info-card {
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    width: 100%;
-    min-height: 180px; /* Gives standard, reliable structural block shape sizes */
-}
-
-.gallery-img {
-    object-fit: cover;
-    height: 100%;
-}
-
-.info-card {
-    padding: 30px 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: left;
-}
-
-.net { background-color: #0e1726; color: white; }
-.hand { background-color: #d32f2f; color: white; }
-
-.net h4, .hand h4 {
-    margin: 0 0 10px 0;
-    font-size: 1.15rem;
-    font-weight: 700;
-}
-.net p, .hand p {
-    margin: 0;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.85);
-}
-
-/* Explicit Stagger Assignments matching the layout pattern */
 .f3   { grid-column: 1; grid-row: 1; }
 .net  { grid-column: 2; grid-row: 1; }
 .hand { grid-column: 1; grid-row: 2; }
 .f1   { grid-column: 2; grid-row: 2; }
-
-
-
 
 /* ---------- Section 2: Sliding Timeline System ---------- */
 #section2 {
@@ -259,7 +247,7 @@ header.top {
 }
 .itf, .mid, .nab, .grad, .party {
     position: relative;
-    width: 45%; /* Keeps layouts safe relative to the center track line */
+    width: 45%; 
     background: white;
     border-radius: 12px;
     padding: 20px;
@@ -602,18 +590,18 @@ footer {
    ============================================================ */
 @media (max-width: 768px) {
     header.top { 
-        height: 60px; 
-        padding: 0 20px; 
+        height: 56px; 
+        padding: 0 16px; 
     }
     .logo { 
-        height: 32px; 
+        height: 28px; 
     }
     
     .ham {
         display: inline-flex !important;
         align-items: center;
         justify-content: center;
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         color: black;
         cursor: pointer;
     }
@@ -634,8 +622,8 @@ footer {
         position: fixed;
         top: 0;
         right: 0;
-        height: 100dvh; /* Dynamic Viewport height stops browser toolbars from cutting it off */
-        width: 280px;
+        height: 100dvh; 
+        width: 240px;
         background: white;
         z-index: 999;
         flex-direction: column;
@@ -643,7 +631,7 @@ footer {
         gap: 0;
         transform: translateX(100%);
         transition: transform 0.3s ease;
-        padding-top: 20px;
+        padding-top: 15px;
     }
     #menu:checked ~ .nav { 
         transform: translateX(0); 
@@ -651,11 +639,11 @@ footer {
     .nav-close-row { 
         display: flex !important; 
         justify-content: flex-end; 
-        padding: 15px; 
+        padding: 12px; 
         border-bottom: 1px solid #eee; 
     }
     .nav-close { 
-        font-size: 1.5rem; 
+        font-size: 1.25rem; 
         color: black; 
         cursor: pointer; 
     }
@@ -664,109 +652,230 @@ footer {
         border-bottom: 1px solid #f5f5f5; 
     }
     .top a {
-        font-size: 1rem;
-        padding: 15px 20px;
+        font-size: 0.85rem;
+        padding: 12px 16px;
     }
-/* ============================================================
-   RESPONSIVE OVERVIEWS SYSTEM (MOBILE OVERRIDES)
-   ============================================================ */
-@media (max-width: 768px) {
+
+    /* Hero Section Downscale */
+    #home {
+        min-height: 240px;
+        padding: 30px 16px;
+    }
+    #home h1 {
+        font-size: 1.6rem;
+    }
+
+    /* Section 1 Overview - Shrunk & Structured Exactly Like 1001908805.jpg */
     #overview {
-        grid-template-columns: 1fr; /* Stacks text column above images natively */
-        gap: 40px;
-        margin: 40px auto;
+        grid-template-columns: 1fr; 
+        gap: 24px;
+        margin: 35px auto;
         width: 90%;
     }
-
     .leg {
-        text-align: left; /* Maintains alignment rules from the screenshot layout */
+        text-align: left; 
     }
-
+    .leg h1 { 
+        font-size: 1.8rem; 
+        margin-bottom: 12px;
+    }
+    .leg p { 
+        font-size: 0.85rem; 
+        margin-bottom: 12px;
+        line-height: 1.5;
+    }
     .leg-meta {
-        gap: 30px;
+        margin-top: 16px;
+        gap: 24px;
+    }
+    .meta-item {
+        font-size: 0.85rem;
+    }
+    .meta-item span {
+        font-size: 0.65rem;
+    }
+    .grid-left-gallery { 
+        grid-template-columns: 1fr 1fr; 
+        gap: 10px;
+    }
+    .f3, .f1 { 
+        height: 110px; 
+    }
+    .net, .hand {  
+        padding: 12px;
+        min-height: 110px;
+        border-radius: 8px;
+    }
+    .net h4, .hand h4 { 
+        font-size: 0.85rem; 
+        margin-bottom: 4px;
+    }
+    .net p, .hand p { 
+        font-size: 0.72rem;
+        line-height: 1.4;
     }
 
-    .grid-left-gallery {
-        grid-template-columns: 1fr 1fr; /* Keeps matrix 2x2 design layout clear on small screens */
-        gap: 12px;
+    /* Section 2 Timeline System - Shrunk Spacing */
+    #section2 {
+        padding: 35px 0;
+    }
+    .first {
+        margin-bottom: 20px;
+    }
+    .first ul {
+        padding: 4px 12px;
+        margin-bottom: 8px;
+    }
+    .first li {
+        font-size: 0.7rem;
+    }
+    .year {
+        font-size: 1.5rem;
+    }
+    .first p {
+        font-size: 0.8rem;
+    }
+    .line {
+        padding: 20px 0;
+    }
+    .center-line-track {
+        left: 15px; 
+    }
+    .itf, .mid, .nab, .grad, .party { 
+        width: calc(100% - 30px);
+        left: 30px !important;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 14px;
+        margin-bottom: 16px;
+        border-radius: 8px;
+        animation: none !important; 
+    }
+    .itf .date, .mid .date, .nab .date, .grad .date, .party .date {
+        font-size: 0.65rem;
+        padding: 2px 8px;
+        margin-bottom: 6px;
+    }
+    .itf i, .mid i, .nab i, .grad i, .party i {
+        font-size: 1.4rem;
+        margin-bottom: 6px;
+    }
+    .itf h6, .mid h6, .nab h6, .grad h6, .party h6 {
+        font-size: 0.9rem;
+        margin-bottom: 4px;
+    }
+    .bot {
+        font-size: 0.75rem;
+        line-height: 1.4;
     }
 
-    .gallery-img, .info-card {
-        min-height: 140px; /* Slightly downscales height to stay clean inside physical smartphone widths */
+    #section3, #section4 {
+        padding: 35px 16px;
+        font-size: 1.4rem;
+    }
+
+    /* Section 5 Fees and Funding - Scaled Down */
+    #section5 { 
+        padding: 35px 16px; 
+    }
+    .fees-header {
+        margin-bottom: 24px;
+    }
+    .fees-badge-pill {
+        font-size: 0.65rem;
+        padding: 2px 8px;
+    }
+    .fees-header h2 { 
+        font-size: 1.5rem; 
+        margin: 10px 0 6px 0;
+    }
+    .fees-header p {
+        font-size: 0.8rem;
+    }
+    .personalized-card { 
+        padding: 24px 16px; 
+        margin-bottom: 20px;
         border-radius: 12px;
     }
-
-    .info-card {
-        padding: 16px;
+    .card-icon-spark {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+        margin-bottom: 12px;
     }
-
-    .net h4, .hand h4 {
+    .personalized-card h3 {
+        font-size: 1.1rem;
+    }
+    .card-sub-prose {
+        font-size: 0.78rem;
+        margin-bottom: 20px;
+    }
+    .personalized-channels { 
+        grid-template-columns: 1fr; 
+        gap: 12px; 
+    }
+    .channel-box {
+        padding: 14px;
+    }
+    .channel-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+    }
+    .channel-box h5 {
+        font-size: 0.8rem;
+    }
+    .channel-box p {
+        font-size: 0.7rem;
+    }
+    .funding-disclosure-block { 
+        padding: 16px; 
+        border-radius: 8px;
+    }
+    .funding-title-row i {
         font-size: 0.95rem;
+    }
+    .funding-title-row h4 {
+        font-size: 0.85rem;
+    }
+    .funding-intro {
+        font-size: 0.75rem;
+        margin-bottom: 8px;
+    }
+    .funding-bullets li {
+        font-size: 0.72rem;
+        padding-left: 12px;
         margin-bottom: 6px;
     }
 
-    .net p, .hand p {
-        font-size: 0.8rem;
+    /* Why Doxa - Clean Tight Cards */
+    #why {
+        padding: 35px 16px;
     }
-}
-
-    /* Section 2 Timeline System Single Column Mobile Fallback */
-    .center-line-track {
-        left: 20px; /* Shifts timeline tracker leftwards natively on phones */
+    .why {
+        font-size: 1.5rem;
+        margin-bottom: 24px;
     }
-    .itf, .mid, .nab, .grad, .party { 
-        width: calc(100% - 40px);
-        left: 40px !important;
-        margin-left: 0;
-        margin-right: 0;
-        animation: none !important; /* Disables buggy transforms across small screens */
-    }
-
-    /* Section 5 Fees and Funding Responsiveness */
-    #section5 { 
-        padding: 40px 20px; 
-    }
-    .fees-header h2 { 
-        font-size: 1.8rem; 
-    }
-    .personalized-card { 
-        padding: 30px 15px; 
-    }
-    .personalized-channels { 
-        grid-template-columns: 1fr; /* Stacks column cards layout vertically on mobile */
-        gap: 15px; 
-    }
-    .card-sub-prose {
-        font-size: 0.85rem;
-    }
-
-    /* Why Doxa Cards Mobile Layout Grid Stack */
     .cards { 
         grid-template-columns: 1fr; 
-        gap: 20px; 
+        gap: 12px; 
+    }
+    .card {
+        padding: 20px 16px;
+        border-radius: 8px;
+    }
+    .card i {
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    .card h4 {
+        font-size: 0.95rem;
+    }
+    .card p {
+        font-size: 0.78rem;
     }
 
-    /* Conversion Main2 Block */
-    .main2 { 
-        grid-template-columns: 1fr; 
-        gap: 40px; 
-        text-align: center;
-    }
-    .join-img {
-        max-width: 100%;
-    }
-    .jf1, .jf2 {
-        height: 150px;
-    }
-    
-    /* Footer Layout Rows Single Column Target */
-    footer { 
-        grid-template-columns: 1fr; 
-        gap: 30px; 
-        text-align: center;
-    }
-    .social-links {
-        justify-content: center;
-    }
-    }
-    
+    /* Conversion System Layout
