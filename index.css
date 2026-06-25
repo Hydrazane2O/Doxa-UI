@@ -918,8 +918,9 @@ footer {
 }
 /* ---------- start---------- */
 .main2{
-    width: 100%;
+    max-width: 100%;
     gap: 20px;
+    justify-content: center;
 }
 .fut, .join{
     font-size: smaller;
