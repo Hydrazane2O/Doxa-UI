@@ -796,12 +796,12 @@ footer {
     }
     @keyframes mobileslideleft {
         0%{transform: translateX(0px);}
-        50%{transform: translateX(82px);}
+        50%{transform: translateX(42px);}
         100%{transform: translateX(0px);}
     }
     @keyframes mobileslideright {
         0%{transform: translateX(0px);}
-        50%{transform: translateX(-82px);}
+        50%{transform: translateX(-42px);}
         100%{transform: translateX(0px);}
     }
     #section3, #section4 {
