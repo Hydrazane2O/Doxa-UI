@@ -103,18 +103,20 @@ header.top {
 /* ---------- Overview Section ---------- */
 #overview {
     width: 92%;
-    max-width: 1200px;
-    margin: 80px auto;
+    margin: 0px auto;
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 50px;
-    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
 }
 .grid-left-gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     width: 100%;
+    margin: 0 auto;
+    grid-row: 1 ;
+    grid-column: 2;
 }
 .f3, .f1, .net, .hand {
     border-radius: 12px;
@@ -124,15 +126,13 @@ header.top {
 .f3, .f1 {
     object-fit: cover;
     height: 240px;
-    width: 100%;
+    width: 200px;
 }
 .net, .hand {
-    padding: 24px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: left;
-    min-height: 140px;
+    color: white;
+    font-size: 0.1rem;
+    border-radius: 12px;
+    font-weight: bold;
 }
 .net { background-color: #0e1726; color: white; }
 .hand { background-color: #d32f2f; color: white; }
@@ -144,7 +144,7 @@ header.top {
 }
 .net p, .hand p {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 0.6rem;
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.9);
 }
@@ -153,6 +153,10 @@ header.top {
     text-transform: none;
     font-family: Arial, Helvetica, sans-serif;
     width: 100%;
+    grid-row: 1; /* text comes first */
+    grid-column: 1;
+    text-align: center;
+    text-align: left;
 }
 .leg h1 {
     font-family: "Sanchez", sans-serif;
