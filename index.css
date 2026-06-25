@@ -296,14 +296,14 @@ header.top {
     line-height: 1.5;
 }
 @keyframes slideleft {
-    0%{transform: translateX(0vw);}
-    50%{transform: translateX(12vw);}
-    100%{transform: translateX(0vw);}
+    0%{transform: translateX(0%);}
+    50%{transform: translateX(52%);}
+    100%{transform: translateX(0%);}
 }
 @keyframes slideright {
-    0%{transform: translateX(0vw);}
-    50%{transform: translateX(-12vw);}
-    100%{transform: translateX(0vw);}
+    0%{transform: translateX(0%);}
+    50%{transform: translateX(-52%);}
+    100%{transform: translateX(0%);}
 }
 #section3, #section4 {
     padding: 60px 20px;
@@ -746,19 +746,36 @@ footer {
     }
     .line {
         padding: 20px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        overflow-x: hidden;
     }
-    
-    .itf, .nab, .party { 
-        width: 230px;
-        left: 2% !important;
-        margin-left: 0;
-        margin-right: 0;
+    .center-line-track{
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .itf, .nab, .party, .mid, .grad{ 
+        width: 42% !important;
+        max-width: 280px;
         padding: 14px;
         margin-bottom: 16px;
-        border-radius: 8px;; 
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        position: relative;
     }
-    .mid, .grad{
-        left: 10% !important;
+    .itf, .nab, .party{
+        left: -30% !important;
+        margin-right: auto;
+        margin-left: auto;
+        animation: mobileslideleft 4s infinite;
+    }
+    .mid,.grad{
+        left: 30% !important;
+        margin-right: auto;
+        margin-left: auto;
+        animation: mobileslideright 4s infinite;
     }
     .itf .date, .mid .date, .nab .date, .grad .date, .party .date {
         font-size: 0.65rem;
@@ -777,7 +794,16 @@ footer {
         font-size: 0.75rem;
         line-height: 1.4;
     }
-
+    @keyframes mobileslideleft {
+        0%{transform: translateX(0px);}
+        50%{transform: translateX(82px);}
+        100%{transform: translateX(0px);}
+    }
+    @keyframes mobileslideright {
+        0%{transform: translateX(0px);}
+        50%{transform: translateX(-82px);}
+        100%{transform: translateX(0px);}
+    }
     #section3, #section4 {
         padding: 35px 16px;
         font-size: 1.4rem;
