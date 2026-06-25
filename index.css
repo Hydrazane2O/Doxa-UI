@@ -916,7 +916,11 @@ footer {
 /* ---------- start---------- */
 .main2{
     width: 100%;
+    gap: 20px;
 }
 .fut, .join{
     font-size: smaller;
+}
+.join-img{
+    gap: 10px;
 }
