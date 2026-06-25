@@ -101,87 +101,46 @@ header.top {
 }
 
 /* ---------- Overview Section ---------- */
+/* ---------- Section 1: Overview Layout System ---------- */
 #overview {
     width: 92%;
     max-width: 1200px;
-    margin: 60px auto;
-}
-#overview .img {
-    display: flex;
-    gap: 40px;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap; /* Allows natural wrapping if spaces break */
-}
-.grid-left-gallery {
+    margin: 80px auto;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    width: 100%;
-    max-width: 550px;
-}
-.f3, .f1, .net, .hand {
-    border-radius: 12px;
-    margin: 0;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-}
-.f3, .f1 {
-    object-fit: cover;
-    height: 240px;
-    width: 100%;
-}
-.net, .hand {
-    padding: 24px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    min-height: 140px;
-}
-.net { background-color: #0e1726; color: white; }
-.hand { background-color: #d32f2f; color: white; }
-
-.net h4, .hand h4 {
-    margin: 0 0 8px 0;
-    font-size: 1.1rem;
-    font-weight: 700;
-}
-.net p, .hand p {
-    margin: 0;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.9);
+    grid-template-columns: 1fr 1.2fr; /* Separates text content and image grid cleanly */
+    gap: 50px;
+    align-items: center;
 }
 
+/* --- Left Side Typography & Branding Info --- */
 .leg {
-    text-transform: none;
     font-family: Arial, Helvetica, sans-serif;
-    width: 100%;
-    max-width: 450px;
 }
 .leg h1 {
     font-family: "Sanchez", sans-serif;
-    font-size: 2.2rem;
+    font-size: clamp(2.2rem, 3.5vw, 3rem);
     margin: 0 0 20px 0;
-    line-height: 1.2;
-    color: #222;
+    line-height: 1.15;
+    color: #111;
 }
-.leg h1 span { color: #c62828; }
+.leg h1 span { 
+    color: #c62828; 
+}
 .leg p {
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.6;
     color: #555;
     margin: 0 0 20px 0;
 }
 .leg-meta {
-    margin-top: 24px;
+    margin-top: 30px;
     display: flex;
     gap: 40px;
 }
 .meta-item {
     font-size: 1rem;
     font-weight: bold;
-    color: #111;
+    color: #c62828; /* Highlights icon data labels */
 }
 .meta-item span {
     display: block;
@@ -193,10 +152,58 @@ header.top {
     letter-spacing: 0.5px;
 }
 
+/* --- Right Side: Staggered Matrix Grid Layout --- */
+.grid-left-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Equal split layout matches visual file */
+    gap: 20px;
+    width: 100%;
+}
+
+/* Unified styling for all matrix grid containers */
+.gallery-img, .info-card {
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    min-height: 180px; /* Gives standard, reliable structural block shape sizes */
+}
+
+.gallery-img {
+    object-fit: cover;
+    height: 100%;
+}
+
+.info-card {
+    padding: 30px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.net { background-color: #0e1726; color: white; }
+.hand { background-color: #d32f2f; color: white; }
+
+.net h4, .hand h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+.net p, .hand p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Explicit Stagger Assignments matching the layout pattern */
 .f3   { grid-column: 1; grid-row: 1; }
 .net  { grid-column: 2; grid-row: 1; }
 .hand { grid-column: 1; grid-row: 2; }
 .f1   { grid-column: 2; grid-row: 2; }
+
+
+
 
 /* ---------- Section 2: Sliding Timeline System ---------- */
 #section2 {
@@ -660,44 +667,48 @@ footer {
         font-size: 1rem;
         padding: 15px 20px;
     }
+/* ============================================================
+   RESPONSIVE OVERVIEWS SYSTEM (MOBILE OVERRIDES)
+   ============================================================ */
+@media (max-width: 768px) {
+    #overview {
+        grid-template-columns: 1fr; /* Stacks text column above images natively */
+        gap: 40px;
+        margin: 40px auto;
+        width: 90%;
+    }
 
-    /* Section 1 Overview Mobile Grid Stack */
-    #overview .img { 
-        flex-direction: column;
+    .leg {
+        text-align: left; /* Maintains alignment rules from the screenshot layout */
+    }
+
+    .leg-meta {
         gap: 30px;
     }
-    .grid-left-gallery { 
-        max-width: 100%;
+
+    .grid-left-gallery {
+        grid-template-columns: 1fr 1fr; /* Keeps matrix 2x2 design layout clear on small screens */
         gap: 12px;
     }
-    .f3, .f1 { 
-        height: 160px; 
+
+    .gallery-img, .info-card {
+        min-height: 140px; /* Slightly downscales height to stay clean inside physical smartphone widths */
+        border-radius: 12px;
     }
-    .net, .hand {  
-        padding: 20px 15px;
-        min-height: 110px;
+
+    .info-card {
+        padding: 16px;
     }
-    .net h4, .hand h4 { 
-        font-size: 1rem; 
+
+    .net h4, .hand h4 {
+        font-size: 0.95rem;
+        margin-bottom: 6px;
     }
-    .net p, .hand p { 
+
+    .net p, .hand p {
         font-size: 0.8rem;
     }
-    .leg {
-        width: 100%;
-        max-width: 100%;
-        text-align: center;
-    }
-    .leg h1 { 
-        font-size: 1.8rem; 
-    }
-    .leg p { 
-        font-size: 0.95rem; 
-    }
-    .leg-meta {
-        justify-content: center;
-        gap: 25px;
-    }
+}
 
     /* Section 2 Timeline System Single Column Mobile Fallback */
     .center-line-track {
