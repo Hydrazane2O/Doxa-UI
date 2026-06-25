@@ -264,8 +264,8 @@ header.top {
     box-shadow: 0 8px 24px rgba(255, 0, 0, 0.08);
 }
 
-.itf, .nab, .party { left: 0; margin-right: auto; }
-.mid, .grad { left: 55%; margin-left: auto; }
+.itf, .nab, .party { left: -20%; margin-right: auto; animation: slideleft 10s infinite; }
+.mid, .grad { left: 20%; margin-left: auto; animation: slideright 10s infinite;  }
 
 .itf .date, .mid .date, .nab .date, .grad .date, .party .date {
     display: inline-block;
@@ -295,7 +295,16 @@ header.top {
     margin: 0;
     line-height: 1.5;
 }
-
+@keyframes slideleft {
+    0%{transform: translateX(0vw);}
+    50%{transform: translateX(12vw);}
+    100%{transform: translateX(0vw);}
+}
+@keyframes slideright {
+    0%{transform: translateX(0vw);}
+    50%{transform: translateX(-12vw);}
+    100%{transform: translateX(0vw);}
+}
 #section3, #section4 {
     padding: 60px 20px;
     text-align: center;
