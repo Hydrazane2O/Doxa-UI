@@ -852,6 +852,7 @@ footer {
     .channel-box {
         padding: 14px;
         max-width: 200px;
+        max-height: 150px;
     }
     .channel-icon {
         width: 30px;
