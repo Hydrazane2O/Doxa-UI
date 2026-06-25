@@ -893,7 +893,7 @@ footer {
         margin-bottom: 24px;
     }
     .cards { 
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr 1fr 1fr; 
         gap: 12px; 
     }
     .card {
