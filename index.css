@@ -927,3 +927,6 @@ footer {
 .join-img{
     gap: 10px;
 }
+.start p, h1{
+    font-size: smaller;
+}
