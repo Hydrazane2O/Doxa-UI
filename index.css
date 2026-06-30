@@ -318,7 +318,7 @@ header.top {
 }
 #section3 {
      background-color: #2e7d32; 
-    }
+}
 /* ---------- Section 4: Requirements ---------- */
 #section4 {
     background-color: #0F172A;
@@ -331,34 +331,57 @@ header.top {
 }
 #section4 img.man {
     max-width: 500px;
-    height: auto;
-    display: block;
-    margin: 0 auto 20px auto;
+    height: 450px;
+    display: flex;
+    margin: 80px auto 20px auto;
     grid-column: 2;
     grid-row: 1;
+    border: 1px solid rgb(43, 56, 72);
+    border-radius: 20px;
 }
 .entry{
     text-align: left;
 }
 .entry h1{
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-family: "Sanchez", sans-serif;
     font-weight: lighter;
     line-height: 1;
     text-align: left;
+    max-height: 500px;
 }
 .entry h1 span{
     color: #dc2626;
 }
 .entry i{
-    margin-right: 8px;
-    border: 1vw  solid #dc2626;
+    width:45px;
+    height:45px;
+    margin:20px 10px 8px 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 20px solid #dc2626;
     border-radius: 20%;
+    flex-shrink: 0;
 }
 .entry p{
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     line-height: 1.5;
     color: #cbd5e1;
+    margin: 0;
+}
+.all{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+.ico{
+    display: flex;
+    align-items: flex-start;
+}
+.entry h3{
+    margin: 10px 0 4px 0;
+    font-size: 1.5rem;
 }
 /* ---------- SECTION 5: Fees & Funding ---------- */
 #section5 {
@@ -960,7 +983,6 @@ footer {
     .card p {
         font-size: 0.52rem;
     }
-}
 /* ---------- start---------- */
 .main2{
     max-width: 100%;
@@ -975,4 +997,17 @@ footer {
 }
 .start p, h1{
     font-size: smaller;
+}
+/**---------- Footer Rows ---------- */
+footer {
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+}
+.about p, .contact p, .quick a{
+    font-size: 0.495rem;
+}
+
+
+
+
 }
