@@ -1002,10 +1002,13 @@ footer {
 footer {
     grid-template-columns: 1fr 1fr 1fr;
     text-align: center;
+    margin: 0;
 }
 .about p, .contact p, .quick a{
-    font-size: 0.495rem;
+    font-size: 0.55rem;
 }
+footer h4{
+    font-size: 0.65rem;}
 
 
 
