@@ -309,6 +309,14 @@ header.top {
     50%{transform: translateX(-52%);}
     100%{transform: translateX(0%);}
 }
+.ready{
+    width:70vw;
+    height: 30vw;
+    border-radius: 2vw;
+    justify-content: center;
+    background-color: red;
+    color: white;
+}
 #section3, #section4 {
     padding: 60px 20px;
     text-align: center;
