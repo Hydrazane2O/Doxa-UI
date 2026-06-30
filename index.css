@@ -309,23 +309,57 @@ header.top {
     50%{transform: translateX(-52%);}
     100%{transform: translateX(0%);}
 }
-.ready{
-    width:70vw;
-    height: 30vw;
-    border-radius: 2vw;
-    justify-content: center;
-    background-color: red;
-    color: white;
-}
-#section3, #section4 {
+
+#section3{
     padding: 60px 20px;
     text-align: center;
     color: white;
     font-family: "Sanchez", sans-serif;
 }
-#section3 { background-color: #2e7d32; }
-#section4 { background-color: #c62828; }
-
+#section3 {
+     background-color: #2e7d32; 
+    }
+/* ---------- Section 4: Requirements ---------- */
+#section4 {
+    background-color: #0F172A;
+    font-family: 'Inter', sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 60px 20px;
+    color: white;
+}
+#section4 img.man {
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto;
+    grid-column: 2;
+    grid-row: 1;
+}
+.entry{
+    text-align: left;
+}
+.entry h1{
+    font-size: 2.5rem;
+    font-family: "Sanchez", sans-serif;
+    font-weight: lighter;
+    line-height: 1;
+    text-align: left;
+}
+.entry h1 span{
+    color: #dc2626;
+}
+.entry i{
+    margin-right: 8px;
+    border: 1vw  solid #dc2626;
+    border-radius: 20%;
+}
+.entry p{
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #cbd5e1;
+}
 /* ---------- SECTION 5: Fees & Funding ---------- */
 #section5 {
     padding: 60px 4%;
