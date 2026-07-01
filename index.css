@@ -21,6 +21,7 @@ body {
     grid-template-columns: 1fr;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    background-color: rgb(247, 243, 243);
 }
 img, video {
     max-width: 100%;
@@ -85,18 +86,45 @@ header.top {
 #home {
     min-height: 400px;
     width: 100%;
-    background: linear-gradient(135deg, #111, #222);
-    color: white;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    grid-template-columns: 1fr 1fr;
+    text-align: start;
     padding: 40px 20px;
+}
+.home-text {
+    max-width: 500px;
+    margin-bottom: 20px;
+    grid-column: 1;
+    grid-row: 1;
+}
+#home img {
+    max-width: 500px;
+    height: auto;
+    border-radius: 12px;
+    grid-column: 2;
+    grid-row: 1;
+    transform: s;
 }
 #home h1 {
     font-family: "Sanchez", sans-serif;
-    font-size: 2.5rem;
+    font-size: 4.5rem;
     letter-spacing: 1.5px;
+    font-weight: lighter;
+    margin: 0;
+}
+#home h1 span, #home h3 i {
+    color: #dc2626;
+}
+#home h3 {
+    font-family: "Sofia Sans", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 10px 0 20px 0;
+}
+#home p {
+    font-size: 1rem;
+    color: #555;
     margin: 0;
 }
 
@@ -386,7 +414,7 @@ header.top {
 /* ---------- SECTION 5: Fees & Funding ---------- */
 #section5 {
     padding: 60px 4%;
-    background-color: #ffffff;
+    background-color: rgb(247, 243, 243);
     font-family: 'Inter', sans-serif;
 }
 .fees-header {
@@ -494,7 +522,7 @@ header.top {
 }
 
 .funding-disclosure-block {
-    background-color: #f8fafc;
+    background-color: rgb(247, 243, 243);
     border-radius: 12px;
     max-width: 700px;
     margin: 0 auto;
