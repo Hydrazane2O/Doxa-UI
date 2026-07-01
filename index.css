@@ -889,8 +889,8 @@ footer {
     }
     .man{
         max-width: 100%;
-        width: 40vw;
-        height: 1vw;
+        width: 50vw;
+        max-height: 300px;
     }
     .entry h3{
         font-size: 1.0rem;
