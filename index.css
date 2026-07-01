@@ -1003,13 +1003,23 @@ footer {
     grid-template-columns: 1fr 1fr 1fr;
     text-align: center;
     margin: 0;
+    gap: 10px;
+    padding: 10px 4% 20px 4%;
 }
 .about p, .contact p, .quick a{
     font-size: 0.55rem;
 }
-footer h4{
-    font-size: 0.65rem;}
-
-
-
+.quick h4, .contact h4{
+    font-size: 0.66rem;}
+}
+.quick ul, .contact ul{
+    gap: 1px;
+}
+.quick, .contact{
+    margin: 0 auto;
+    width: 100%;
+}
+footer .logo {
+    height: 54px;
+    width: 84px;
 }
