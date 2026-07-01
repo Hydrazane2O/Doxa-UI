@@ -104,7 +104,11 @@ header.top {
     border-radius: 12px;
     grid-column: 2;
     grid-row: 1;
-    transform: s;
+    box-shadow: 0 20px 20px 20px;
+}
+#home img:hover {
+    transform: rotate(4deg);
+    transition: transform 0.3s ease-in-out;
 }
 #home h1 {
     font-family: "Sanchez", sans-serif;
