@@ -166,6 +166,7 @@ header.top {
     margin: 0 auto;
     grid-row: 1;
     grid-column: 2;
+    margin-top: 50px;
 }
 .f3, .f1, .net, .hand {
     border-radius: 12px;
