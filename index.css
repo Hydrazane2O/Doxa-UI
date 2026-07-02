@@ -150,13 +150,10 @@ header.top {
 
 /* ---------- Overview Section ---------- */
 #overview {
-    width: 92%;
+    width: 100%;
     margin-top: 20px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     display: grid;
-    gap: 30px;
-    justify-content: center;
-    align-items: center;
 }
 .grid-left-gallery {
     display: grid;
@@ -166,7 +163,9 @@ header.top {
     margin: 0 auto;
     grid-row: 1;
     grid-column: 2;
+    max-width: 700px;
     margin-top: 50px;
+    margin-right: 30px;
 }
 .f3, .f1, .net, .hand {
     border-radius: 12px;
@@ -215,7 +214,7 @@ header.top {
     width: 100%;
     max-width: 600px;
     text-align: left;
-    grid-column: 3;
+    grid-column: 1;
     grid-row: 1;
 }
 .leg h1 {
